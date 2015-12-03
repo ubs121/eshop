@@ -36,6 +36,7 @@ https://www.translate.com/
 http://kupinatao.com/
 
 
+Crawling tip:
 ```
 1	淘宝网	taobao
 Coding=gbk
@@ -43,6 +44,18 @@ Product name=/<title>(?P<this>.*)-(.*)<\/title>/U
 Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 /<em class=\"price left\">(?P<this>.*)<\/em>/U
 ```
+
+# Used technologies
+
+* MongoDb 3.0 (backend)
+* Google Golang (server app)
+* Facebook JSSDK, Canvas app
+* Taobao API
+* Google Polymer.js (frontend)
+* Google Translate (translation)
+* Single page app, Web Components
+* D3.js (visualization)
+* HTTP2.0 (networking)
 
 # Installation instruction
 
