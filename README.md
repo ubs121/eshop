@@ -43,7 +43,7 @@ Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 
 
 
-# TODO:
+# TODO
 
 * on-demand орчуулга шийдэх: google translate, translate.com. Монголоос хятад, хятадаас монгол руу
 * taobao goods API судлах (open.taobao.com)
@@ -64,4 +64,3 @@ Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 * нууцлалын нэмэлтүүд
 * fiverrs - log design харах
 * Loayalty - Candy, GG
-
