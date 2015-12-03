@@ -34,12 +34,13 @@ https://www.translate.com/
 http://kupinatao.com/
 
 
+```
 1	淘宝网	taobao
 Coding=gbk
 Product name=/<title>(?P<this>.*)-(.*)<\/title>/U
 Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 /<em class=\"price left\">(?P<this>.*)<\/em>/U
-
+```
 
 # Installation instruction
 
