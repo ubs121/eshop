@@ -54,7 +54,7 @@ To run (development mode):
 
 
 
-# TODO things
+# Things todo
 
 
 * on-demand орчуулга шийдэх: google translate, translate.com. Монголоос хятад, хятадаас монгол руу
