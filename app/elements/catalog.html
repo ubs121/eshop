@@ -1,0 +1,195 @@
+<!--
+@license
+Copyright (c) 2015 ubs121
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<script src="../bower_components/d3/d3.min.js"></script>
+
+<dom-module id="p-catalog">
+  <style>
+    :host {
+      display: block;
+    }
+
+    aside {
+      background: white;
+      display: block;
+      height: auto;
+      width: 200px;
+    }
+
+    .item {
+        display: block;
+        float: left;
+        height: 140px;
+        width: 220px;
+        margin: 10px;
+        padding: 10px;
+        background: white;
+      }
+
+      .item > .actions {
+        color: gray;
+      }
+
+  </style>
+
+  <template>
+     <iron-ajax id="xhrProduct"
+       url="http://localhost:3000/s/find"
+       method="post"
+       handle-as="json"
+       on-response="handleItems"></iron-ajax>
+
+     <iron-ajax id="xhrTags"
+       url="http://localhost:3000/s/find"
+       method="post"
+       handle-as="json"
+       on-response="handleTags"></iron-ajax>
+
+     <!-- TODO: https://www.apm.mn/ зүүн талын toolbar харах -->
+     <template is="dom-repeat" items="[[menu]]">
+       <paper-button class="categ" href="#" on-tap="filter"
+            style="background:[[item.color]]">
+        [[item.name]]
+       </paper-button>
+     </template>
+      <br/>
+
+
+    <div class="layout horizontal">
+
+
+       <!-- TODO: Эрэмбэлэх: үнээр, нийлүүлэгчээр -->
+       <!-- TODO: Сагсанд бараа нэмэх -->
+       <!-- TODO: Төлбөр хийх -->
+
+      <!-- барааны жагсаалт-->
+      <div class="flex">
+      <template is="dom-repeat" items="[[items]]" >
+        <paper-material class="item layout vertical" elevation="1">
+          <span class="paper-font-body1">{{item.name}}</span>
+          <br/>
+          10'000₮
+          <br/>
+          <span class="flex"></span>
+
+          <div class="actions">
+            <paper-icon-button icon="refresh"></paper-icon-button>
+            <paper-icon-button icon="add-shopping-cart" title="Сагсанд нэмэх"></paper-icon-button>
+          </div>
+        </paper-material>
+      </template>
+      </div>
+
+
+       <aside>
+        <input placeholder="filter"/>
+        <template is="dom-repeat" items="[[tags]]">
+           <button class="tags" href="#" on-tap="filter"
+                style="background:[[item.color]]">
+            [[item._id]]
+           </button>
+         </template>
+       </aside>
+
+
+    </div>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'p-catalog',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          },
+
+          tags: {
+              type: Array
+          }
+        },
+
+        ready: function() {
+
+        // TODO: каталогит icon нэмэх. http://www.flaticon.com/packs/shopping
+          this.menu = [
+            {name: 'хувцас', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
+            {name: 'гоёл', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
+            {name: 'гэр ахуй', 'count': 12, 'color': '#E7560D'},
+            {name: 'хүнс', 'count': 12, 'color': '#E7560D'},
+            {name: 'компютер', 'color': '#FDAE6B', '_tags': []},
+            {name: 'бичиг хэрэг', 'count': '3', 'color':'pink', 'rank': 4.5},
+            {name: 'спорт', 'count': '5', 'rank': 4.5, 'color': '#FDAE6B'},
+            {name: 'авто', 'count': '5', 'rank': 4.5, 'color': '#FDAE6B'}
+          ];
+
+          this.tags = [
+          ];
+
+          this.items = [
+            {name: 'бараа1', '_id': 1},
+            {name: 'бараа2', '_id': 2},
+            {name: 'бараа3', '_id': 3},
+            {name: 'бараа4', '_id': 4},
+            {name: 'бараа5', '_id': 5},
+            {name: 'бараа6', '_id': 6}
+          ];
+
+          this.filter();
+          this.find();
+        },
+
+        filter: function(e) {
+          var findTags = {
+            "Collection": "tags",
+            "Sort": ["-rank"],
+            "Skip": 0,
+            "Limit": 70
+          };
+          this.$.xhrTags.body = JSON.stringify(findTags);
+          this.$.xhrTags.generateRequest();
+        },
+
+        find: function(e) {
+          var findProduct = {
+            "Collection": "p",
+            "Sort": ["rank"],
+            "Skip": 0,
+            "Limit": 30
+          };
+          this.$.xhrProduct.body = JSON.stringify(findProduct);
+          this.$.xhrProduct.generateRequest();
+        },
+
+        handleItems: function(resp) {
+          if (!resp.detail.response.Error) {
+            this.items = resp.detail.response.Result.Data;
+          }
+        },
+
+        handleTags: function(resp) {
+          if (!resp.detail.response.Error) {
+            this.tags = resp.detail.response.Result.Data;
+          }
+        },
+
+        itemUri: function(id) {
+          return "/p/" + id;
+        },
+
+        
+      });
+    })();
+  </script>
+
+</dom-module>

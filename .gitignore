@@ -1,0 +1,8 @@
+node_modules
+dist
+bower_components
+.tmp
+.idea/workspace.xml
+eshop
+data_import
+tag_rank

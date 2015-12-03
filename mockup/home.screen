@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="1" x="80" y="24" width="921" height="881" text="Zaan shop&#xA;http://www.facebook.com/zaan" measuredWidth="921" measuredHeight="881">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Panel" id="2" x="80" y="76" width="921" height="45" measuredWidth="921" measuredHeight="45" background="#0b5394" border="none"/>
+  <widgets xsi:type="model:Label" id="3" x="104" y="86" text="facebook" measuredWidth="116" measuredHeight="34" foreground="#ffffff">
+    <font size="16pt" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="4" x="209" y="98" measuredWidth="16" measuredHeight="16" foreground="#eeeeee" icon="usergroup (small)"/>
+  <widgets xsi:type="model:Icon" id="5" x="232" y="98" measuredWidth="16" measuredHeight="16" foreground="#eeeeee" icon="comments (small)"/>
+  <widgets xsi:type="model:Icon" id="6" x="255" y="98" measuredWidth="16" measuredHeight="16" foreground="#eeeeee" icon="internet (small)"/>
+  <widgets xsi:type="model:TextField" id="7" x="288" y="92" width="289" text="Zaan shop" measuredWidth="289" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Icon" id="8" x="556" y="99" measuredWidth="16" measuredHeight="16" icon="find (small)"/>
+  <widgets xsi:type="model:Label" id="9" x="708" y="93" text="Home   Profile   Find Friends   Account{desc}" measuredWidth="317" measuredHeight="25" foreground="#ffffff">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:VLine" id="10" x="288" y="118" height="787" measuredWidth="6" measuredHeight="787"/>
+  <widgets xsi:type="model:SearchField" id="15" x="91" y="365" width="183" text="tags" measuredWidth="183" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:LinkBar" id="17" x="793" y="139" text="All,Local, Taobao" measuredWidth="143" measuredHeight="25" selection="0">
+    <font/>
+    <items x="0" y="0" width="20" height="25" text="All"/>
+    <items x="38" y="0" width="37" height="25" text="Local"/>
+    <items x="93" y="0" width="49" height="25" text="Taobao"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="19" x="786" y="556" width="207" height="28" text="Үйлдэл" measuredWidth="207" measuredHeight="28" background="#cccccc" border="none" textAlignment="Left">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="31" x="786" y="179" width="207" height="28" text="Сурталчилгаа" measuredWidth="207" measuredHeight="28" background="#cccccc" border="none" textAlignment="Left">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Placeholder" id="33" x="798" y="222" width="188" height="94" text="Ad1" measuredWidth="188" measuredHeight="94"/>
+  <widgets xsi:type="model:Placeholder" id="40" x="313" y="264" width="60" height="60" text="Photo" measuredWidth="60" measuredHeight="60"/>
+  <widgets xsi:type="model:Rectangle" id="41" x="387" y="363" width="390" height="30" text="{comments} View all 5 comments" measuredWidth="390" measuredHeight="30" background="#9fc5e8" border="none" textAlignment="Left">
+    <font size="9pt"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="42" x="304" y="247" width="465" measuredWidth="465" measuredHeight="6"/>
+  <widgets xsi:type="model:Text" id="43" x="387" y="268" width="390" height="56" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." measuredWidth="390" measuredHeight="56">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="44" x="387" y="330" width="390" height="30" text="{thumbs-up} Jon Doe and 3 others like this." measuredWidth="390" measuredHeight="30" background="#9fc5e8" border="none" textAlignment="Left">
+    <font size="9pt"/>
+  </widgets>
+  <widgets xsi:type="model:Placeholder" id="45" x="313" y="469" width="60" height="60" text="Photo" measuredWidth="60" measuredHeight="60"/>
+  <widgets xsi:type="model:Rectangle" id="46" x="387" y="568" width="390" height="30" text="{comments} View all 5 comments" measuredWidth="390" measuredHeight="30" background="#9fc5e8" border="none" textAlignment="Left">
+    <font size="9pt"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="47" x="304" y="457" width="465" measuredWidth="465" measuredHeight="6"/>
+  <widgets xsi:type="model:Text" id="48" x="387" y="473" width="390" height="56" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." measuredWidth="390" measuredHeight="56">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="49" x="387" y="535" width="390" height="30" text="{thumbs-up} Jon Doe and 3 others like this." measuredWidth="390" measuredHeight="30" background="#9fc5e8" border="none" textAlignment="Left">
+    <font size="9pt"/>
+  </widgets>
+  <widgets xsi:type="model:Placeholder" id="50" x="313" y="663" width="60" height="60" text="Photo" measuredWidth="60" measuredHeight="60"/>
+  <widgets xsi:type="model:Rectangle" id="51" x="387" y="762" width="390" height="30" text="{comments} View all 5 comments" measuredWidth="390" measuredHeight="30" background="#9fc5e8" border="none" textAlignment="Left">
+    <font size="9pt"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="52" x="304" y="647" width="465" measuredWidth="465" measuredHeight="6"/>
+  <widgets xsi:type="model:Text" id="53" x="387" y="667" width="390" height="56" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." measuredWidth="390" measuredHeight="56">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="54" x="387" y="729" width="390" height="30" text="{thumbs-up} Jon Doe and 3 others like this." measuredWidth="390" measuredHeight="30" background="#9fc5e8" border="none" textAlignment="Left">
+    <font size="9pt"/>
+  </widgets>
+  <widgets xsi:type="model:Rectangle" id="60" x="823" y="868" width="168" height="27" text="{user} Chat (0)" measuredWidth="168" measuredHeight="27" textAlignment="Left">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:SearchField" id="61" x="313" y="139" width="465" text="All: Search" measuredWidth="465" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="62" x="91" y="186" text="гутал" measuredWidth="63" measuredHeight="27" background="#6fa8dc">
+    <font bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="64" x="168" y="221" width="103" text="эмэгтэй" measuredWidth="103" measuredHeight="27" background="#6fa8dc">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="65" x="160" y="187" text="цүнх" measuredWidth="50" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="66" x="90" y="222" text="бээлий" measuredWidth="65" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="67" x="218" y="186" text="малгай" measuredWidth="65" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="68" x="90" y="256" text="ном" measuredWidth="44" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="69" x="138" y="256" text="хүүхдийн" measuredWidth="80" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="70" x="209" y="291" text="тоглоом" measuredWidth="71" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="71" x="93" y="291" width="108" text="платье" measuredWidth="108" measuredHeight="29">
+    <font size="16px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Button" id="72" x="224" y="256" text="спорт" measuredWidth="57" measuredHeight="25">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="73" x="90" y="158" width="193" measuredWidth="193" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="74" x="93" y="137" text="Tags, category" measuredWidth="114" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:Breadcrumbs" id="75" x="312" y="179" text="Home,Product,Search result" measuredWidth="222" measuredHeight="25">
+    <font/>
+    <items x="0" y="0" width="40" height="25" text="Home"/>
+    <items x="60" y="0" width="51" height="25" text="Product"/>
+    <items x="131" y="0" width="88" height="25" text="Search result"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="76" x="312" y="228" text="Product name 1" measuredWidth="103" measuredHeight="23">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="77" x="313" y="435" text="Product name 2" measuredWidth="103" measuredHeight="23">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="78" x="312" y="625" text="Product name 3" measuredWidth="103" measuredHeight="23">
+    <font size="12px"/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="80" x="808" y="696" width="129" height="138" text="бараа rank-аараа эрэмбэлэгдэж хайлтын үр дүнд харагдана&#xA;&#xA;Үзсэн, like хийсэн,  хайсан, зарагдсан г.м үзүүлэлтээр барааны rank-г тогтооно" measuredWidth="129" measuredHeight="138" alpha="243">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="81" x="313" y="339" text="34'000₮" measuredWidth="58" measuredHeight="23">
+    <font size="12px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="82" x="313" y="546" text="55'000₮" measuredWidth="58" measuredHeight="23">
+    <font size="12px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="83" x="313" y="740" text="23'000₮" measuredWidth="58" measuredHeight="23">
+    <font size="12px" bold="true"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="85" x="729" y="227" text="Local" measuredWidth="40" measuredHeight="25">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="86" x="630" y="434" text="Taobao-с нийлүүлнэ" measuredWidth="145" measuredHeight="25" foreground="#ff9900">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="88" x="91" y="457" width="193" measuredWidth="193" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="89" x="94" y="436" text="Үнэ" measuredWidth="33" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="90" x="90" y="590" width="193" measuredWidth="193" measuredHeight="6"/>
+  <widgets xsi:type="model:Label" id="91" x="93" y="569" text="Размер" measuredWidth="61" measuredHeight="26">
+    <font size="15px"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="92" x="94" y="475" text="[] хямдралтай&#xA;[ ] &lt; 10000&#xA;[x]  10000 - 30000" measuredWidth="138" measuredHeight="73" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="138" height="23" text="[] хямдралтай"/>
+    <items x="0" y="25" width="138" height="23" text="[ ] &lt; 10000"/>
+    <items x="0" y="48" width="138" height="23" text="[x]  10000 - 30000"/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="93" x="-56" y="471" width="110" height="81" text="Сонгосон tag-г дагаж filter нь өөрчлөгдөнө" measuredWidth="110" measuredHeight="81">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:List" id="94" x="94" y="608" text="[x] Small&#xA;[ ] Medium&#xA;[ ] Large" measuredWidth="84" measuredHeight="73" border="false" alpha="0">
+    <font/>
+    <items x="0" y="2" width="84" height="23" text="[x] Small"/>
+    <items x="0" y="25" width="84" height="23" text="[ ] Medium"/>
+    <items x="0" y="48" width="84" height="23" text="[ ] Large"/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="95" x="-69" y="246" width="110" height="120" text="tags сонгох, болих замаар хялбар хайна,&#xA;&#xA;хайлтын үр дүн дагаж өөрчлөгдөнө" measuredWidth="110" measuredHeight="120">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Arrow" id="96" x="40" y="210" width="51" height="37" measuredWidth="51" measuredHeight="37" left="false" right="true" direction="bottom"/>
+  <widgets xsi:type="model:Arrow" id="97" x="40" y="246" width="129" height="19" measuredWidth="129" measuredHeight="19" left="false" right="true" direction="bottom"/>
+  <widgets xsi:type="model:Note" id="98" x="-48" y="152" width="121" height="53" text="Rank-с хамааран том, жижиг tag товчнууд байна" measuredWidth="121" measuredHeight="53">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Label" id="99" x="630" y="624" text="Taobao-с нийлүүлнэ" measuredWidth="145" measuredHeight="25" foreground="#ff9900">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="100" x="94" width="113" height="53" text="Facebook дотор ажиллана (Facebook App)" measuredWidth="113" measuredHeight="53">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Note" id="101" x="1024" y="104" width="97" height="96" text="Хайх домэйн сонгоно. Локал дэлгүүрээс, Taobao-с г.м" measuredWidth="97" measuredHeight="96">
+    <font size="11px"/>
+  </widgets>
+  <widgets xsi:type="model:Arrow" id="102" x="943" y="144" width="74" height="9" measuredWidth="74" measuredHeight="9" direction="bottom"/>
+  <widgets xsi:type="model:List" id="103" x="808" y="595" width="174" text="{bell} Дагах&#xA;{print} Хэвлэх&#xA;" measuredWidth="174" measuredHeight="50" border="false">
+    <font underline="true"/>
+    <items x="0" y="2" width="174" height="23" text="{bell} Дагах"/>
+    <items x="0" y="25" width="174" height="23" text="{print} Хэвлэх"/>
+  </widgets>
+  <widgets xsi:type="model:Placeholder" id="104" x="798" y="331" width="188" height="94" text="Ad2" measuredWidth="188" measuredHeight="94"/>
+  <widgets xsi:type="model:Placeholder" id="105" x="798" y="436" width="188" height="94" text="Ad3" measuredWidth="188" measuredHeight="94"/>
+  <widgets xsi:type="model:Arrow" id="106" x="56" y="457" width="35" height="17" measuredWidth="35" measuredHeight="17" left="false" right="true" direction="bottom"/>
+  <widgets xsi:type="model:Arrow" id="107" x="53" y="547" width="28" height="37" measuredWidth="28" measuredHeight="37" left="false" right="true"/>
+  <hRuler/>
+  <vRuler/>
+  <font name="Comic Sans MS" size="13px"/>
+</model:Screen>

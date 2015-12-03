@@ -1,0 +1,56 @@
+<!--
+@license
+Copyright (c) 2015 ubs121
+-->
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="p-info">
+  <template>
+    <style include="shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <h2 class="page-title"><span>{{greeting}}</span></h2>
+    <span class="paper-font-body2">Update text to change the greeting.</span>
+    <!-- Listens for "input" event and sets greeting to <input>.value -->
+    <input class="paper-font-body2" value="{{greeting::input}}">
+
+    <br/>
+    <button>Buy</button>
+    <br/>
+    <g-pay>Pay</g-pay>
+
+    <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+    </div>
+
+    <sidebar>
+        Барааны талаар нэмэлт мэдээлэл
+    </sidebar>
+
+  </template>
+
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'p-info',
+
+        properties: {
+          greeting: {
+            type: String,
+            value: 'Welcome!',
+            notify: true
+          }
+        }
+      });
+    })();
+  </script>
+
+</dom-module>

@@ -1,0 +1,94 @@
+<!--
+@license
+Copyright (c) 2015 ubs121
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-input/iron-input.html">
+<link rel="import" href="../bower_components/iron-collapse/iron-collapse.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+
+<!-- @see http://www.brightpointinc.com/download/autocomplete-source-code/ -->
+
+<dom-module id="search-box">
+  <style>
+    input {
+      border: none;
+      padding: 3px;
+      margin: 3px;
+    }
+  </style>
+  
+  <template>
+    <div class="layout horizontal">
+    Taobao
+    <input is="iron-input" class="flex" placeholder="бараа хайх..." bind-value="{{searchValue::input}}"/>
+
+    <paper-icon-button icon="search" suffix on-click="_find"
+                          title="Find"></paper-icon-button>
+    </div>
+
+    <iron-collapse id="collapse">
+      <paper-material>
+        <div>
+            <template id="resultList" is="dom-repeat" items="{{choices}}" filter="_listFilter">
+                <paper-item>
+                    <paper-button on-tap="_selectItem">{{item.name}}</paper-button>
+                </paper-item>
+            </template>
+        </div>
+      </paper-material>
+    </iron-collapse>
+
+  </template>
+  <script>
+  
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'search-box',
+
+        properties: {
+          searchValue: {
+            type: String,
+            value: '',
+            observer: "_valueChanged"
+          },
+          value: {
+                type: Object,
+          },
+          choices: Array
+        },
+
+        ready: function() {
+            this.$.resultList.render();
+        },
+
+        _valueChanged: function(e) {
+            var collapse = this.$.collapse;
+            if (e != '' && !collapse.opened) {
+                this.$.resultList.render();
+                collapse.toggle();
+            } else if (e == '' && collapse.opened) {
+                collapse.toggle();
+            }
+        },
+
+        _listFilter: function(item) {
+            return item.name.toLowerCase().includes(
+                this.searchValue.toLowerCase()
+            );
+        },
+
+        _selectItem: function(event) {
+            this.set('searchValue', event.model.item.name);
+            this.set('value', event.model.item);
+            collapse.toggle();
+        }
+      });
+    })();
+ </script>    
+</dom-module>

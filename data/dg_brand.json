@@ -1,0 +1,1031 @@
+[{
+  "bid": 1,
+  "bname": "Abercrombie & Fitch",
+  "bimg": "/attachment/brand/201401/20140115142941_234.jpg",
+  "burl": "/index.php/brands/list1?keyword=Abercrombie+%26+Fitch&cateid=",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 2,
+  "bname": "Absorba",
+  "bimg": "/attachment/brand/201401/20140115160733_227.gif",
+  "burl": "/index.php/brands/list1?keyword=Absorba",
+  "listorder": 2,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 3,
+  "bname": "Adidas",
+  "bimg": "/attachment/brand/201401/20140115161035_272.jpg",
+  "burl": "/index.php/brands/list1?keyword=Adidas",
+  "listorder": 1,
+  "bcontent": "Adidas — популярнейшая в России торговая марка, \nпринадлежащая немецкому промышленному концерну, который специализируется\n на выпуске спортивной экипировки: обуви, одежды, \nаксессуаров  и инвентаря. Использование новейших научных разработок, \n«умных» материалов и высокотехнологичного оборудования позволяет фирме \nсоздавать костюмы и снаряжение, обеспечивающие атлетам особый комфорт в \nпроцессе тренировок. Экипировка Adidas дает возможность демонстрировать \nмаксимальные результаты спортсменам любого уровня физической \nподготовленности.",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 4,
+  "bname": "Alexander McQueen",
+  "bimg": "/attachment/brand/201401/20140115161234_533.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 5,
+  "bname": "Anna Sui",
+  "bimg": "/attachment/brand/201401/20140115161323_476.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 6,
+  "bname": "Anne Klein",
+  "bimg": "/attachment/brand/201401/20140115161402_333.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 7,
+  "bname": "Annzo",
+  "bimg": "/attachment/brand/201401/20140115161446_170.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 8,
+  "bname": "Aocang ",
+  "bimg": "/attachment/brand/201401/20140115161535_903.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 9,
+  "bname": "ARMANI",
+  "bimg": "/attachment/brand/201401/20140115161616_432.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 10,
+  "bname": "Balenciaga",
+  "bimg": "/attachment/brand/201401/20140115161703_360.png",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 11,
+  "bname": "Calvin Klein",
+  "bimg": "/attachment/brand/201401/20140115161753_440.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 12,
+  "bname": "2·Eleven",
+  "bimg": "",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "china"
+ },
+ {
+  "bid": 13,
+  "bname": "A-ZA",
+  "bimg": "",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "",
+  "state": 1,
+  "catename": "china"
+ },
+ {
+  "bid": 14,
+  "bname": "Asos",
+  "bimg": "",
+  "burl": "",
+  "listorder": 2,
+  "bcontent": "Asos - modern fashion",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 15,
+  "bname": "Balenciaga",
+  "bimg": "/attachment/brand/201403/20140326224813_957.jpg",
+  "burl": "",
+  "listorder": 1,
+  "bcontent": "&lt;p&gt;\n &nbsp; &nbsp;  &nbsp;Balenciaga\n&lt;/p&gt;\n&lt;p&gt;\n &nbsp; &nbsp;  &nbsp;&lt;br /&gt;\n&lt;/p&gt;\n&lt;p&gt;\n &nbsp; &nbsp;  &nbsp;Balenciaga\n&lt;/p&gt;\n&lt;p&gt;\n &nbsp; &nbsp;  &nbsp;&lt;br /&gt;\n&lt;/p&gt;\n&lt;p&gt;\n &nbsp; &nbsp;  &nbsp;Balenciaga\n&lt;/p&gt;",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 16,
+  "bname": "Baleno",
+  "bimg": "/attachment/brand/201403/20140326224952_570.jpg",
+  "burl": "",
+  "listorder": 2,
+  "bcontent": "Baleno",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 17,
+  "bname": "Bally",
+  "bimg": "/attachment/brand/201403/20140326225222_415.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Bally",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 18,
+  "bname": "Bebe",
+  "bimg": "/attachment/brand/201403/20140326225321_859.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Bebe",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 19,
+  "bname": "Benetton",
+  "bimg": "/attachment/brand/201403/20140326225405_379.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Benetton",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 20,
+  "bname": "Betty Boop",
+  "bimg": "/attachment/brand/201403/20140326225523_630.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Betty Boop",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 21,
+  "bname": "Bottega Veneta",
+  "bimg": "/attachment/brand/201403/20140326225559_855.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Bottega Veneta",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 22,
+  "bname": "Breguet",
+  "bimg": "/attachment/brand/201403/20140326225647_805.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Breguet",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 23,
+  "bname": "Burberry",
+  "bimg": "/attachment/brand/201403/20140326225729_740.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Burberry",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 24,
+  "bname": "Calvin Klein",
+  "bimg": "/attachment/brand/201403/20140326230056_638.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Calvin Klein",
+  "state": 0,
+  "catename": "world"
+ },
+ {
+  "bid": 25,
+  "bname": "Camel Active",
+  "bimg": "/attachment/brand/201403/20140326230130_846.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Camel Active",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 26,
+  "bname": "CAT",
+  "bimg": "/attachment/brand/201403/20140326230158_525.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "CAT",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 27,
+  "bname": "Celine",
+  "bimg": "/attachment/brand/201403/20140326230230_285.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Celine",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 28,
+  "bname": "Chanel",
+  "bimg": "/attachment/brand/201403/20140326230303_250.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Chanel",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 29,
+  "bname": "Chloe",
+  "bimg": "/attachment/brand/201403/20140326230333_332.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Chloe",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 30,
+  "bname": "Clarks",
+  "bimg": "/attachment/brand/201403/20140326230403_589.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Clarks",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 31,
+  "bname": "Coach",
+  "bimg": "/attachment/brand/201403/20140326230438_970.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Coach",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 32,
+  "bname": "Columbia",
+  "bimg": "/attachment/brand/201403/20140326230508_450.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Columbia",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 33,
+  "bname": "Converse",
+  "bimg": "/attachment/brand/201403/20140326230541_783.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Converse",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 34,
+  "bname": "Crocs",
+  "bimg": "/attachment/brand/201403/20140326230628_686.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Crocs",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 35,
+  "bname": "Diesel",
+  "bimg": "/attachment/brand/201403/20140327221111_951.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Diesel",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 36,
+  "bname": "Dior",
+  "bimg": "/attachment/brand/201403/20140327221612_243.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Dior",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 37,
+  "bname": "DKNY",
+  "bimg": "/attachment/brand/201403/20140327221732_343.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "DKNY",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 38,
+  "bname": "Dolce&Gabbana",
+  "bimg": "/attachment/brand/201403/20140327221846_654.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Dolce&Gabbana",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 39,
+  "bname": "Dsquared2",
+  "bimg": "/attachment/brand/201403/20140327221958_420.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Dsquared2",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 40,
+  "bname": "Dunhill",
+  "bimg": "/attachment/brand/201403/20140327222049_592.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Dunhill",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 41,
+  "bname": "ECCO",
+  "bimg": "/attachment/brand/201403/20140327222143_429.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "ECCO",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 42,
+  "bname": "ED HARDY",
+  "bimg": "/attachment/brand/201403/20140327222225_629.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "ED HARDY",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 43,
+  "bname": "ENERGIE",
+  "bimg": "/attachment/brand/201403/20140327222337_998.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "ENERGIE",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 44,
+  "bname": "ESPRIT",
+  "bimg": "/attachment/brand/201403/20140327222417_814.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "ESPRIT",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 45,
+  "bname": "FENDI",
+  "bimg": "/attachment/brand/201403/20140327222505_908.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "FENDI",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 46,
+  "bname": "Fossil",
+  "bimg": "/attachment/brand/201403/20140327222604_595.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Fossil",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 47,
+  "bname": "G-Star",
+  "bimg": "/attachment/brand/201403/20140327222648_750.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "G-Star",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 48,
+  "bname": "Gap",
+  "bimg": "/attachment/brand/201403/20140327222723_772.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Gap",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 49,
+  "bname": "Geox",
+  "bimg": "/attachment/brand/201403/20140327222811_705.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Geox",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 50,
+  "bname": "Gucci",
+  "bimg": "/attachment/brand/201403/20140327222909_692.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Gucci",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 51,
+  "bname": "Guess",
+  "bimg": "/attachment/brand/201403/20140327222958_837.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Guess",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 52,
+  "bname": "H&M",
+  "bimg": "/attachment/brand/201403/20140327223038_791.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "H&M",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 53,
+  "bname": "Harley Davidson",
+  "bimg": "/attachment/brand/201403/20140327223121_480.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Harley Davidson",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 54,
+  "bname": "Hello Kitty",
+  "bimg": "/attachment/brand/201403/20140327223157_158.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Hello Kitty",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 55,
+  "bname": "Hermes",
+  "bimg": "/attachment/brand/201403/20140327223253_979.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Hermes",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 56,
+  "bname": "Hugo Boss",
+  "bimg": "/attachment/brand/201403/20140327223336_912.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Hugo Boss",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 57,
+  "bname": "Iceberg",
+  "bimg": "/attachment/brand/201403/20140327223525_463.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Iceberg",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 58,
+  "bname": "Jack&Jones",
+  "bimg": "/attachment/brand/201403/20140327223610_165.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Jack&Jones",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 59,
+  "bname": "Jimmy Choo",
+  "bimg": "/attachment/brand/201403/20140327223705_332.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Jimmy Choo",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 60,
+  "bname": "Juicy couture",
+  "bimg": "/attachment/brand/201403/20140327223745_623.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Juicy couture",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 61,
+  "bname": "Kenneth Cole",
+  "bimg": "/attachment/brand/201403/20140327223837_366.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Kenneth Cole",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 62,
+  "bname": "Killah",
+  "bimg": "/attachment/brand/201403/20140327224020_876.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Killah",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 63,
+  "bname": "Lacoste",
+  "bimg": "/attachment/brand/201403/20140327224200_247.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Lacoste",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 64,
+  "bname": "Lee",
+  "bimg": "/attachment/brand/201403/20140327224315_889.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Lee",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 65,
+  "bname": "Levi Strauss&Co",
+  "bimg": "/attachment/brand/201403/20140327224615_571.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Levi Strauss&Co",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 66,
+  "bname": "Mango",
+  "bimg": "/attachment/brand/201403/20140327224731_444.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Mango",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 67,
+  "bname": "Salvatore Ferrafamo",
+  "bimg": "/attachment/brand/201403/20140327224901_757.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Salvatore Ferrafamo",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 68,
+  "bname": "Marc Jacobs",
+  "bimg": "/attachment/brand/201404/20140403155002_363.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Marc Jacobs",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 69,
+  "bname": "Marc Jacobs",
+  "bimg": "/attachment/brand/201404/20140403155002_363.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Marc Jacobs",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 70,
+  "bname": "Marina Rinaldi",
+  "bimg": "/attachment/brand/201404/20140403155323_463.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Marina Rinaldi",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 71,
+  "bname": "Marlboro",
+  "bimg": "/attachment/brand/201404/20140403155356_304.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Marlboro",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 72,
+  "bname": "Marni",
+  "bimg": "/attachment/brand/201404/20140403155426_177.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Marni",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 73,
+  "bname": "Max Mara",
+  "bimg": "/attachment/brand/201404/20140403155504_786.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Max Mara",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 74,
+  "bname": "Merrell",
+  "bimg": "/attachment/brand/201404/20140403155538_443.png",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Merrell",
+  "state": 1,
+  "catename": "china"
+ },
+ {
+  "bid": 75,
+  "bname": "Mexx",
+  "bimg": "/attachment/brand/201404/20140403155634_809.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Mexx",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 76,
+  "bname": "Miss Sixty",
+  "bimg": "/attachment/brand/201404/20140403155719_239.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Miss Sixty",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 77,
+  "bname": "Miu Miu",
+  "bimg": "/attachment/brand/201404/20140403155802_787.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Miu Miu",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 78,
+  "bname": "Moncler",
+  "bimg": "/attachment/brand/201404/20140403155908_602.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Moncler",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 79,
+  "bname": "Monsoon",
+  "bimg": "/attachment/brand/201404/20140403155953_722.png",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Monsoon",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 80,
+  "bname": "Montagut",
+  "bimg": "/attachment/brand/201404/20140403160027_322.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Montagut",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 81,
+  "bname": "Montblanc",
+  "bimg": "/attachment/brand/201404/20140403160311_478.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Montblanc",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 82,
+  "bname": "Morgan",
+  "bimg": "/attachment/brand/201404/20140403160401_740.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Morgan",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 83,
+  "bname": "Moschino",
+  "bimg": "/attachment/brand/201404/20140403160440_326.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Moschino",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 84,
+  "bname": "Mulberry",
+  "bimg": "/attachment/brand/201404/20140403160522_347.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Mulberry",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 85,
+  "bname": "Nautica",
+  "bimg": "/attachment/brand/201404/20140403160610_625.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Nautica",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 86,
+  "bname": "Next",
+  "bimg": "/attachment/brand/201404/20140403160708_300.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Next",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 87,
+  "bname": "Nike",
+  "bimg": "/attachment/brand/201404/20140403160753_899.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Nike",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 88,
+  "bname": "Nine West",
+  "bimg": "/attachment/brand/201404/20140403160822_782.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Nine West",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 89,
+  "bname": "Paul Frank",
+  "bimg": "/attachment/brand/201404/20140403161352_299.png",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Paul Frank",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 90,
+  "bname": "Paul Smith",
+  "bimg": "/attachment/brand/201404/20140403161430_981.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Paul Smith",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 91,
+  "bname": "Paul&Shark",
+  "bimg": "/attachment/brand/201404/20140403161508_209.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Paul&Shark",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 92,
+  "bname": "Pierre Cardin",
+  "bimg": "/attachment/brand/201404/20140403161615_975.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Pierre Cardin",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 93,
+  "bname": "Playboy",
+  "bimg": "/attachment/brand/201404/20140403161644_802.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Playboy",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 94,
+  "bname": "Prada",
+  "bimg": "/attachment/brand/201404/20140403161727_695.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Prada",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 95,
+  "bname": "Puma",
+  "bimg": "/attachment/brand/201404/20140403161812_458.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Puma",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 96,
+  "bname": "Vero Moda",
+  "bimg": "/attachment/brand/201404/20140403161926_175.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Vero Moda",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 97,
+  "bname": "Versace",
+  "bimg": "/attachment/brand/201404/20140403162003_229.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Versace",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 98,
+  "bname": "Victoria&#039;s Secret",
+  "bimg": "/attachment/brand/201404/20140403162055_680.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Victoria&#039;s Secret",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 99,
+  "bname": "Vivienne Tam",
+  "bimg": "",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Vivienne Tam",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 100,
+  "bname": "Vivienne Westwood",
+  "bimg": "/attachment/brand/201404/20140403162408_500.jpg",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Vivienne Westwood",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 101,
+  "bname": "YSL/Yves Saint Laurent",
+  "bimg": "/attachment/brand/201404/20140403162442_410.gif",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "YSL/Yves Saint Laurent",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 102,
+  "bname": "Zara",
+  "bimg": "/attachment/brand/201404/20140403162615_842.png",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Zara",
+  "state": 1,
+  "catename": "world"
+ },
+ {
+  "bid": 103,
+  "bname": "Zegna",
+  "bimg": "/attachment/brand/201404/20140403162655_438.png",
+  "burl": "",
+  "listorder": 0,
+  "bcontent": "Zegna",
+  "state": 1,
+  "catename": "world"
+ }
+]
