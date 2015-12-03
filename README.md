@@ -3,15 +3,14 @@
 * taobao.com search
 * On demand translation: mongol <-> chinese
 * Facebook Integration
-* Responsive, Mobile friendly web
+* Responsive, Mobile friendly web UI
 * Fast product search (and syncing)
 * Search Ranking
 
 
 # Ерөнхий
 
-bubble view, list view
-
+* bubble view, list view
 * зүүн талын шүүлтүүр
 * хуудаслалт, more
 * metabase маягийн query interface хэрэгтэй
@@ -24,7 +23,7 @@ bubble view, list view
 
 # Барааны дэлгэрэнгүй мэдээлэл
 
-* үндсэн дэлгэц зурах
+* Дэлгэрэнгүй мэдээлэл харуулах дэлгэц зурах 
 * Facebook comment, like (facebook-с энэ мэдээллүүдийг дараа нь боловсруулж чадах уу?)
 * Холбоотой мэдээллүүд, бараанууд
 
@@ -42,8 +41,21 @@ Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 /<em class=\"price left\">(?P<this>.*)<\/em>/U
 
 
+# Installation instruction
 
-# TODO
+Install node package manager (npm), gulp, bower and then do the following steps:
+
+* npm update
+* bower update
+
+To run (development mode):
+
+* gulp serve
+
+
+
+# TODO things
+
 
 * on-demand орчуулга шийдэх: google translate, translate.com. Монголоос хятад, хятадаас монгол руу
 * taobao goods API судлах (open.taobao.com)
