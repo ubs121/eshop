@@ -7,9 +7,22 @@
 * Fast product search (and syncing)
 * Search Ranking
 
+# Used technologies
+
+* MongoDb 3.0 (backend)
+* Google Golang (server app)
+* Facebook JSSDK, Canvas app
+* Taobao API
+* Google Polymer.js (frontend)
+* Google Translate (translation)
+* Single page app, Web Components
+* D3.js (visualization)
+* HTTP2.0 (networking)
+
 
 # Ерөнхий дизайн
 
+* mockup хавтаст байгаа дэлгэцийн загварыг харах
 * bubble view, list view
 * зүүн талын шүүлтүүр
 * хуудаслалт, more
@@ -31,12 +44,18 @@
 
 
 # Орчуулга - Google Translate
-https://www.googleapis.com/language/translate/v2?key=INSERT-YOUR-KEY&source=en&target=de&q=Hello%20world
-https://www.translate.com/
-http://kupinatao.com/
+
+* https://www.googleapis.com/language/translate/v2?key=INSERT-YOUR-KEY&source=en&target=de&q=Hello%20world
+
+Бусад хувилбар
+
+* Bing орчуулагч
+* https://www.translate.com/
+* http://kupinatao.com/
 
 
-Crawling tip:
+# Taobao Crawling tip:
+
 ```
 1	淘宝网	taobao
 Coding=gbk
@@ -45,17 +64,7 @@ Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 /<em class=\"price left\">(?P<this>.*)<\/em>/U
 ```
 
-# Used technologies
 
-* MongoDb 3.0 (backend)
-* Google Golang (server app)
-* Facebook JSSDK, Canvas app
-* Taobao API
-* Google Polymer.js (frontend)
-* Google Translate (translation)
-* Single page app, Web Components
-* D3.js (visualization)
-* HTTP2.0 (networking)
 
 # Installation instruction
 
