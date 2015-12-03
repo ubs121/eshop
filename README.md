@@ -1,11 +1,11 @@
 # Mongolian version of Taobao.com
 
-taobao.com search
-On demand translation: mongol <-> chinese
-Facebook Integration
-Responsive, Mobile friendly web
-Fast product search (and syncing)
-Search Ranking
+* taobao.com search
+* On demand translation: mongol <-> chinese
+* Facebook Integration
+* Responsive, Mobile friendly web
+* Fast product search (and syncing)
+* Search Ranking
 
 
 # Ерөнхий
@@ -45,23 +45,23 @@ Price=/<strong id=\"J_StrPrice\" >(?P<this>.*)<\/strong>/U
 
 # TODO:
 
-- on-demand орчуулга шийдэх: google translate, translate.com. Монголоос хятад, хятадаас монгол руу
-- taobao goods API судлах (open.taobao.com)
-- taobao сайтаас бараа хайх, барааг өөрийн бааз руу sync хийх (эрэлттэй tag-аар, idle цагаар)
-- sync хийх job-г hosting server (digital ocean) дээр тавьж ажиллуулж эхлэх, өгөгдөл цуглуулж эхлэх
-- цугларсан бараа, каталоги дээр анализ хийх
-- realtime image optimizer оруулах
-- хайлт, filter хэсгийг оновчлох
-- facebook intregration хийх: comment, like, view
-- Hosting сервер дээр байршуулж тест хийх
-- сагсанд бараа нэмэх хэсэг
-- төлбөрийн шийдэл холбох. Эхэндээ банкны карт холбоно. Дараа нь хялбар шийдэл нэвтрүүлнэ. MostMoney, Credit Cards
-- төлбөрийн маргаан, буцаалт шийдэх хэсэг
-- бараа track хийх хэсэг: taobao logistic API
-- монгол дотор хүргэлт хийх компанитай API тохирох, ярилцах (Монгол шуудан, TGB г.м)
-- admin UI
-- барааны үнийн margin засах
-- нууцлалын нэмэлтүүд
-- fiverrs - log design харах
-- Loayalty - Candy, GG
+* on-demand орчуулга шийдэх: google translate, translate.com. Монголоос хятад, хятадаас монгол руу
+* taobao goods API судлах (open.taobao.com)
+* taobao сайтаас бараа хайх, барааг өөрийн бааз руу sync хийх (эрэлттэй tag-аар, idle цагаар)
+* sync хийх job-г hosting server (digital ocean) дээр тавьж ажиллуулж эхлэх, өгөгдөл цуглуулж эхлэх
+* цугларсан бараа, каталоги дээр анализ хийх
+* realtime image optimizer оруулах
+* хайлт, filter хэсгийг оновчлох
+* facebook intregration хийх: comment, like, view
+* Hosting сервер дээр байршуулж тест хийх
+* сагсанд бараа нэмэх хэсэг
+* төлбөрийн шийдэл холбох. Эхэндээ банкны карт холбоно. Дараа нь хялбар шийдэл нэвтрүүлнэ. MostMoney, Credit Cards
+* төлбөрийн маргаан, буцаалт шийдэх хэсэг
+* бараа track хийх хэсэг: taobao logistic API
+* монгол дотор хүргэлт хийх компанитай API тохирох (Монгол шуудан, TGB г.м)
+* admin UI
+* барааны үнийн margin засах
+* нууцлалын нэмэлтүүд
+* fiverrs - log design харах
+* Loayalty - Candy, GG
 
