@@ -8,16 +8,18 @@
 * Search Ranking
 
 
-# Ерөнхий
+# Ерөнхий дизайн
 
 * bubble view, list view
 * зүүн талын шүүлтүүр
 * хуудаслалт, more
 * metabase маягийн query interface хэрэгтэй
+* Төстэй сайтууд харах. Жнь: net-a-porter.com 
 
 
-# Home хуудас
+# Home буюу каталоги хуудас
 
+* каталоги байршина
 * сурталчилгаа
 * шинэ бараанууд
 
@@ -66,7 +68,6 @@ To run (development mode):
 * realtime image optimizer оруулах
 * хайлт, filter хэсгийг оновчлох
 * facebook intregration хийх: comment, like, view
-* Hosting сервер дээр байршуулж тест хийх
 * сагсанд бараа нэмэх хэсэг
 * төлбөрийн шийдэл холбох. Эхэндээ банкны карт холбоно. Дараа нь хялбар шийдэл нэвтрүүлнэ. MostMoney, Credit Cards
 * төлбөрийн маргаан, буцаалт шийдэх хэсэг
