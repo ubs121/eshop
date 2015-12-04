@@ -2,11 +2,10 @@ package main
 
 import (
 	"eshop/rpc"
-
-	db "github.com/ubs121/db/mongo"
-	//"fmt"
 	"log"
 	"net/http"
+
+	db "github.com/ubs121/db/mongo"
 )
 
 func main() {
@@ -20,5 +19,5 @@ func main() {
 	//rpc.RegisterAdminService(mux)
 
 	log.Println("eshop is started...")
-	http.ListenAndServe(":3000", mux)
+	http.ListenAndServeTLS(":3000", "cert.pem", "key.pem", mux)
 }

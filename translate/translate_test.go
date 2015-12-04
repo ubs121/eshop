@@ -1,16 +1,17 @@
 package translate
 
 import (
-	"fmt"
+	"log"
 	"testing"
 )
 
 func testGoogle(t *testing.T) {
 	s, err := Translate("hello", "mn")
+
 	if err != nil {
-		fmt.Printf("%v", err)
+		log.Printf("%v", err)
 	} else {
-		fmt.Printf("%s", s)
+		log.Printf("%s", s)
 	}
 
 }

@@ -6,9 +6,9 @@ import (
 	"log"
 	"sort"
 
-	db "github.com/ubs121/db/mongo"
-
 	"gopkg.in/mgo.v2/bson"
+
+	db "github.com/ubs121/db/mongo"
 )
 
 func main() {

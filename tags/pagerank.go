@@ -2,7 +2,7 @@ package tags
 
 import "math"
 
-// https://github.com/dcadenas/pagerank
+// original version: https://github.com/dcadenas/pagerank
 
 type Interface interface {
 	Rank(followingProb, tolerance float64, resultFunc func(label int, rank float64))
