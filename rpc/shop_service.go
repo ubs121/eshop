@@ -4,15 +4,15 @@ import (
 	"net/http"
 	"time"
 
-	db "github.com/ubs121/db/mongo"
-
 	"gopkg.in/mgo.v2/bson"
+
+	db "github.com/ubs121/db/mongo"
+	jrpc "github.com/ubs121/rpc/json"
 )
 
 const (
-	dbName    string = "eshop"
-	tableTags        = "tags"
-	tableP           = "p"
+	tableTags = "tags"
+	tableP    = "p"
 )
 
 type (
@@ -22,7 +22,7 @@ type (
 	}
 
 	dataRequest struct {
-		Id         string
+		ID         string
 		Collection string
 		Query      bson.M
 		Sort       []string
@@ -69,13 +69,13 @@ var (
 // TODO: suggest хийх
 func suggest(w http.ResponseWriter, r *http.Request) {
 	args := suggestRequest{}
-	ParseRequest(r, &args)
+	jrpc.ParseRequest(r, &args)
 
 	proj := []string{"_id", "name"}
 	sort := []string{"rank-"}
 	resp, err := db.Find(tableP, args.Query, proj, sort, 0, 5) // эхний 5
 
-	WriteResponse(r, w, resp, err)
+	jrpc.WriteResponse(r, w, resp, err)
 }
 
 // хандалтын (tags) трэнд, эхний 25
@@ -84,21 +84,21 @@ func tags(w http.ResponseWriter, r *http.Request) {
 	sort := []string{"rank-"}
 	resp, err := db.Find(tableTags, bson.M{}, proj, sort, 0, 25)
 
-	WriteResponse(r, w, resp, err)
+	jrpc.WriteResponse(r, w, resp, err)
 }
 
 func view(w http.ResponseWriter, r *http.Request) {
 	args := dataRequest{}
-	ParseRequest(r, &args)
+	jrpc.ParseRequest(r, &args)
 
-	obj, err := db.FindOne(tableP, bson.M{"_id": args.Id}, P_PROJ)
+	obj, err := db.FindOne(tableP, bson.M{"_id": args.ID}, pProjection)
 
 	if err == nil {
 		// TODO: үзсэн тоолуур нэмэх
 		// TODO: rank шинэчилэх
 	}
 
-	WriteResponse(r, w, obj, err)
+	jrpc.WriteResponse(r, w, obj, err)
 }
 
 func like(w http.ResponseWriter, r *http.Request) {
@@ -118,15 +118,15 @@ func order(w http.ResponseWriter, r *http.Request) {
 // нэг мөр хайх, энэ хэрэгтэй юу?
 func findOne(w http.ResponseWriter, r *http.Request) {
 	args := dataRequest{}
-	ParseRequest(r, &args)
+	jrpc.ParseRequest(r, &args)
 	resp, err := db.FindOne(args.Collection, args.Query, args.Select)
-	WriteResponse(r, w, resp, err)
+	jrpc.WriteResponse(r, w, resp, err)
 }
 
 // олон мөр хайх
 func find(w http.ResponseWriter, r *http.Request) {
 	args := dataRequest{}
-	ParseRequest(r, &args)
+	jrpc.ParseRequest(r, &args)
 
 	var resp findReply
 
@@ -151,7 +151,7 @@ func find(w http.ResponseWriter, r *http.Request) {
 
 	resp.Data, err = db.Find(args.Collection, args.Query, args.Select, args.Sort, args.Skip, args.Limit)
 
-	WriteResponse(r, w, resp, err)
+	jrpc.WriteResponse(r, w, resp, err)
 }
 
 // RegisterShopService adds this service into RPC registry

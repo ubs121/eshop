@@ -12,7 +12,7 @@ import (
 func main() {
 	log.Println("db connect...")
 
-	db.Open("127.0.0.1")
+	db.Open("127.0.0.1", "eshop")
 	defer db.Close()
 
 	mux := http.NewServeMux()
