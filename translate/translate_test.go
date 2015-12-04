@@ -1,12 +1,12 @@
-package main
+package translate
 
 import (
-	"eshop/translate"
 	"fmt"
+	"testing"
 )
 
-func main() {
-	s, err := translate.Translate("hello", "mn")
+func testGoogle(t *testing.T) {
+	s, err := Translate("hello", "mn")
 	if err != nil {
 		fmt.Printf("%v", err)
 	} else {
