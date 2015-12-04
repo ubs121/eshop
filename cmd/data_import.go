@@ -1,14 +1,14 @@
 package main
 
-
 import (
 	"io/ioutil"
 
-	"eshop/db"
-	"os"
-	"log"
 	"fmt"
+	"log"
+	"os"
 	"strings"
+
+	db "github.com/ubs121/db/mongo"
 )
 
 func main() {
@@ -19,24 +19,24 @@ func main() {
 
 	log.Println("db connect...")
 
-	db.Open("127.0.0.1")
+	db.Open("127.0.0.1", "eshop")
 	defer db.Close()
 
 	log.Println("import...")
 
-	fileName:=os.Args[1]
-	colName:=os.Args[2]
+	fileName := os.Args[1]
+	colName := os.Args[2]
 
 	data, err := ioutil.ReadFile(fileName)
 
-	if err!= nil {
+	if err != nil {
 		panic(err)
 	}
 
-  // импортлох
+	// импортлох
 	if strings.HasSuffix(fileName, ".json") {
-		db.ImportJson(colName, data)
+		db.ImportJSON(colName, data)
 	} else {
-		db.ImportCsv(colName, data)
+		db.ImportCSV(colName, data)
 	}
 }

@@ -1,13 +1,17 @@
 package tags
 
-import "eshop/db"
+type TAG struct {
+	ID     string
+	Name   string
+	Parent string
+	Rank   float64
+}
 
-type ByRank []db.TAG
+type ByRank []TAG
 
 func (a ByRank) Len() int           { return len(a) }
 func (a ByRank) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByRank) Less(i, j int) bool { return a[i].Rank > a[j].Rank }
-
 
 // product ranking
 func ProductRank() {

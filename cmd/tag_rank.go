@@ -1,18 +1,20 @@
 package main
 
 import (
-	"eshop/db"
 	"eshop/tags"
 	"fmt"
-	"gopkg.in/mgo.v2/bson"
 	"log"
 	"sort"
+
+	db "github.com/ubs121/db/mongo"
+
+	"gopkg.in/mgo.v2/bson"
 )
 
 func main() {
 	log.Println("db connect...")
 
-	db.Open("127.0.0.1")
+	db.Open("127.0.0.1", "eshop")
 	defer db.Close()
 
 	q := db.C(db.TABLE_TAGS).Find(bson.M{})

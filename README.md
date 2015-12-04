@@ -14,7 +14,7 @@
 * Facebook JSSDK, Canvas app
 * Taobao API
 * Google Polymer.js (frontend)
-* Google Translate (translation)
+ion)
 * Single page app, Web Components
 * D3.js (visualization)
 * HTTP2.0 (networking)

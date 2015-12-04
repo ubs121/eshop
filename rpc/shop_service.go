@@ -1,18 +1,27 @@
 package rpc
 
 import (
-	"eshop/db"
-	"gopkg.in/mgo.v2/bson"
 	"net/http"
+	"time"
+
+	db "github.com/ubs121/db/mongo"
+
+	"gopkg.in/mgo.v2/bson"
+)
+
+const (
+	dbName    string = "eshop"
+	tableTags        = "tags"
+	tableP           = "p"
 )
 
 type (
-	SuggestRequest struct {
+	suggestRequest struct {
 		Query bson.M
 		Text  string
 	}
 
-	DataRequest struct {
+	dataRequest struct {
 		Id         string
 		Collection string
 		Query      bson.M
@@ -24,43 +33,65 @@ type (
 		Data       bson.M
 	}
 
-	FindReply struct {
+	findReply struct {
 		Data  []bson.M
 		Count int
+	}
+
+	// A P represents a product.
+	p struct {
+		ID      string    `bson:"_id"`
+		Name    string    `bson:"name"`
+		About   string    `bson:"about"`
+		Price   float64   `bson:"price"`
+		Photo   string    `bson:"photo"`
+		Views   int       `bson:"views"`
+		Buynum  int       `bson:"buynum"`
+		Rank    float64   `bson:"rank"`
+		AddTime time.Time `bson:"addtime"`
+		Tags    []string  `bson:"_tags"`
+	}
+
+	// TAG represents a tag.
+	TAG struct {
+		ID     string  `bson:"_id"`
+		Name   string  `bson:"tag"`
+		Parent string  `bson:"parent"`
+		Rank   float64 `bson:"rank"`
 	}
 )
 
 var (
-	TAG_PROJ = []string{"_id", "tag", "parent", "rank"}
-	P_PROJ   = []string{"_id", "name", "about", "price", "photo", "addtime", "rank", "views", "buynum", "_tags", "_events", "_attachments"}
+	tagProjection = []string{"_id", "tag", "parent", "rank"}
+	pProjection   = []string{"_id", "name", "about", "price", "photo", "addtime", "rank", "views", "buynum", "_tags", "_events", "_attachments"}
 )
 
 // TODO: suggest хийх
-func Suggest(w http.ResponseWriter, r *http.Request) {
-	args := SuggestRequest{}
+func suggest(w http.ResponseWriter, r *http.Request) {
+	args := suggestRequest{}
 	ParseRequest(r, &args)
 
 	proj := []string{"_id", "name"}
 	sort := []string{"rank-"}
-	resp, err := db.Find(db.TABLE_P, args.Query, proj, sort, 0, 5) // эхний 5
+	resp, err := db.Find(tableP, args.Query, proj, sort, 0, 5) // эхний 5
 
 	WriteResponse(r, w, resp, err)
 }
 
 // хандалтын (tags) трэнд, эхний 25
-func Tags(w http.ResponseWriter, r *http.Request) {
+func tags(w http.ResponseWriter, r *http.Request) {
 	proj := []string{"_id", "name", "rank"}
 	sort := []string{"rank-"}
-	resp, err := db.Find(db.TABLE_TAGS, bson.M{}, proj, sort, 0, 25)
+	resp, err := db.Find(tableTags, bson.M{}, proj, sort, 0, 25)
 
 	WriteResponse(r, w, resp, err)
 }
 
-func View(w http.ResponseWriter, r *http.Request) {
-	args := DataRequest{}
+func view(w http.ResponseWriter, r *http.Request) {
+	args := dataRequest{}
 	ParseRequest(r, &args)
 
-	obj, err := db.FindOne(db.TABLE_P, bson.M{"_id": args.Id}, P_PROJ)
+	obj, err := db.FindOne(tableP, bson.M{"_id": args.Id}, P_PROJ)
 
 	if err == nil {
 		// TODO: үзсэн тоолуур нэмэх
@@ -70,38 +101,34 @@ func View(w http.ResponseWriter, r *http.Request) {
 	WriteResponse(r, w, obj, err)
 }
 
-func Like(w http.ResponseWriter, r *http.Request) {
+func like(w http.ResponseWriter, r *http.Request) {
 	// TODO: зөвхөн like хийсэн бараанд notification явуулах уу?
 	// TODO: Like: барааны rank шинэчилэх
 }
 
-func Comment(w http.ResponseWriter, r *http.Request) {
+func comment(w http.ResponseWriter, r *http.Request) {
 	// TODO: comment үлдээх
 }
 
-func Related(w http.ResponseWriter, r *http.Request) {
-
-}
-
 // бараа захиалах, худалдан авах
-func Order(w http.ResponseWriter, r *http.Request) {
+func order(w http.ResponseWriter, r *http.Request) {
 	// TODO: Order: барааны rank шинэчилэх
 }
 
 // нэг мөр хайх, энэ хэрэгтэй юу?
-func FindOne(w http.ResponseWriter, r *http.Request) {
-	args := DataRequest{}
+func findOne(w http.ResponseWriter, r *http.Request) {
+	args := dataRequest{}
 	ParseRequest(r, &args)
 	resp, err := db.FindOne(args.Collection, args.Query, args.Select)
 	WriteResponse(r, w, resp, err)
 }
 
 // олон мөр хайх
-func Find(w http.ResponseWriter, r *http.Request) {
-	args := DataRequest{}
+func find(w http.ResponseWriter, r *http.Request) {
+	args := dataRequest{}
 	ParseRequest(r, &args)
 
-	var resp FindReply
+	var resp findReply
 
 	// TODO: injection шалгалт - onFind(args.Query, w, r)
 
@@ -110,7 +137,7 @@ func Find(w http.ResponseWriter, r *http.Request) {
 
 	// Select байхгүй бол
 	if args.Select == nil {
-		args.Select = P_PROJ
+		args.Select = pProjection
 	}
 
 	args.Sort = append(args.Sort, "rank-")
@@ -127,14 +154,15 @@ func Find(w http.ResponseWriter, r *http.Request) {
 	WriteResponse(r, w, resp, err)
 }
 
+// RegisterShopService adds this service into RPC registry
 func RegisterShopService(mux *http.ServeMux) {
 
-	mux.HandleFunc("/s/find", Find)
-	mux.HandleFunc("/s/findOne", FindOne)
-	mux.HandleFunc("/s/suggest", Suggest)
-	mux.HandleFunc("/tags", Tags)
-	mux.HandleFunc("/p/{id}", View)
-	mux.HandleFunc("/p/like", Like)
-	mux.HandleFunc("/p/comment", Comment)
-	mux.HandleFunc("/p/order", Comment)
+	mux.HandleFunc("/s/find", find)
+	mux.HandleFunc("/s/findOne", findOne)
+	mux.HandleFunc("/s/suggest", suggest)
+	mux.HandleFunc("/tags", tags)
+	mux.HandleFunc("/p/{id}", view)
+	mux.HandleFunc("/p/like", like)
+	mux.HandleFunc("/p/comment", comment)
+	mux.HandleFunc("/p/order", order)
 }

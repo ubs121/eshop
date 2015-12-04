@@ -1,11 +1,12 @@
 package main
 
 import (
-	"eshop/db"
 	"eshop/rpc"
+
+	db "github.com/ubs121/db/mongo"
 	//"fmt"
-	"net/http"
 	"log"
+	"net/http"
 )
 
 func main() {
