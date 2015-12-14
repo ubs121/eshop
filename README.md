@@ -11,19 +11,34 @@
 
 * MongoDb 3.0 (backend)
 * Google Golang (server app)
-* Facebook JSSDK, Canvas app
-* Taobao API
+* HTTP2.0 (networking)
 * Google Polymer.js (frontend)
 * Single page app, Web Components
+* Facebook JSSDK, Canvas app
+* Taobao API
 * D3.js (visualization)
-* HTTP2.0 (networking)
 
+
+# Project structue
+
+* app - Front end
+ - elements - Polymer components
+ - elements/catalog.html - Baraanii jagsaalt
+* cmd - Executables
+ - eshop.go - eshop main
+ - data_import.go - 
+ - tag_rank - https://en.wikipedia.org/wiki/PageRank
+ - ubshop_scan.go - ubshop.mn
+
+ * mockup - UI design - wireframe sketcher
+ * rpc - Server tal (Remote Procedure Call)
+ * tags - helper library for tag_rank.go
 
 # Ерөнхий дизайн
 
 * mockup хавтаст байгаа дэлгэцийн загварыг харах
-* bubble view, list view
-* зүүн талын шүүлтүүр
+* catalog - bubble view, list view
+* зүүн талын шүүлтүүр: razmer, xemjee
 * хуудаслалт, more
 * metabase маягийн query interface хэрэгтэй
 * Төстэй сайтууд харах. Жнь: net-a-porter.com 
@@ -32,14 +47,14 @@
 # Home буюу каталоги хуудас
 
 * каталоги байршина
-* сурталчилгаа
-* шинэ бараанууд
+* сурталчилгаа (small screen deer xasna)
+* шинэ бараанууд (онцлох хэрэгтэй)
 
 # Барааны дэлгэрэнгүй мэдээлэл
 
 * Дэлгэрэнгүй мэдээлэл харуулах дэлгэц зурах 
 * Facebook comment, like (facebook-с энэ мэдээллүүдийг дараа нь боловсруулж чадах уу?)
-* Холбоотой мэдээллүүд, бараанууд
+* Sidebar: Холбоотой мэдээллүүд, бараанууд
 
 
 # Орчуулга - Google Translate
