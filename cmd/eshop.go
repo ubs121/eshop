@@ -20,4 +20,6 @@ func main() {
 
 	log.Println("eshop is started...")
 	http.ListenAndServeTLS(":3000", "cert.pem", "key.pem", mux)
+
+	log.Println("eshop is stopped.")
 }
