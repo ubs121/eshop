@@ -12,3 +12,28 @@ body {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #333;
 }
+paper-toolbar {
+	background: #444 !important;
+	padding: 10px;
+}
+.logo {
+	font-size: 24px;
+	text-transform: uppercase;
+}
+search-box {
+	margin-left: 100px;
+	background: #FFF;
+	border-radius: 3px
+}
+.toolbar-btn-group {
+	border-radius: 22px;
+	border: 1px solid #666;
+}
+.toolbar-btn-group paper-button {
+	padding: 0;
+	font-size: 12px;
+	color: #ccc;
+}
+.toolbar-btn-group paper-button:hover {
+	color: #FFF;
+}

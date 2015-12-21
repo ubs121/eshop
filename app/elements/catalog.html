@@ -36,6 +36,29 @@ Copyright (c) 2015 ubs121
         color: gray;
       }
 
+      .categ {
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        font-size: 12px;
+        padding: 7px 20px;
+        color: #999;
+        margin-top: 5px;
+      }
+
+      .categ:hover {
+        border-color: #444;
+        color: #333;
+      }
+
+      .paper-font-body1 {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 0;
+      }
+
+      .item.p-catalog {
+        height: 200px;
+      }
   </style>
 
   <template>
@@ -61,7 +84,7 @@ Copyright (c) 2015 ubs121
       <br/>
 
 
-    <div class="layout horizontal">
+    <div class="layout horizontal" style="margin-top: 15px;">
 
 
        <!-- TODO: Эрэмбэлэх: үнээр, нийлүүлэгчээр -->
@@ -72,10 +95,9 @@ Copyright (c) 2015 ubs121
       <div class="flex">
       <template is="dom-repeat" items="[[items]]" >
         <paper-material class="item layout vertical" elevation="1">
-          <span class="paper-font-body1">{{item.name}}</span>
-          <br/>
+          <img src="{{item.img}}">
+          <div class="paper-font-body1">{{item.name}}</div>
           10'000₮
-          <br/>
           <span class="flex"></span>
 
           <div class="actions">
@@ -137,12 +159,12 @@ Copyright (c) 2015 ubs121
           ];
 
           this.items = [
-            {name: 'бараа1', '_id': 1},
-            {name: 'бараа2', '_id': 2},
-            {name: 'бараа3', '_id': 3},
-            {name: 'бараа4', '_id': 4},
-            {name: 'бараа5', '_id': 5},
-            {name: 'бараа6', '_id': 6}
+            {name: 'бараа1', '_id': 1, 'img': 'images/baraa1.png'},
+            {name: 'бараа2', '_id': 2, 'img': 'images/baraa2.png'},
+            {name: 'бараа3', '_id': 3, 'img': 'images/baraa3.png'},
+            {name: 'бараа4', '_id': 4, 'img': 'images/baraa4.png'},
+            {name: 'бараа5', '_id': 5, 'img': 'images/baraa5.png'},
+            {name: 'бараа6', '_id': 6, 'img': 'images/baraa6.png'}
           ];
 
           this.filter();

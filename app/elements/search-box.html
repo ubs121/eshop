@@ -14,20 +14,22 @@ Copyright (c) 2015 ubs121
 
 <dom-module id="search-box">
   <style>
-    input {
+    input{
       border: none;
-      padding: 3px;
+      padding: 3px 5px;
+      border-radius: 3px;
       margin: 3px;
+      border: 1px solid #ccc;
+    }
+    paper-icon-button {
+      color: #444
     }
   </style>
   
   <template>
     <div class="layout horizontal">
-    Taobao
-    <input is="iron-input" class="flex" placeholder="бараа хайх..." bind-value="{{searchValue::input}}"/>
-
-    <paper-icon-button icon="search" suffix on-click="_find"
-                          title="Find"></paper-icon-button>
+      <input is="iron-input" class="flex" placeholder="Бараа хайх..." bind-value="{{searchValue::input}}"/>
+      <paper-icon-button icon="search" suffix on-click="_find" title="Find"></paper-icon-button>
     </div>
 
     <iron-collapse id="collapse">

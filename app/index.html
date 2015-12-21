@@ -65,23 +65,23 @@ Copyright (c) 2015 ubs121
   <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
 
     <!-- Main Toolbar -->
-    <paper-toolbar id="mainToolbar" class="medium-tall">
-      <div id="logo"></div>
+    <paper-toolbar id="mainToolbar" class="medium-tall" style="height: 80px">
+      <div class="logo"><img src="styles/logo.png" width="200"></div>
       <search-box class="flex"></search-box>
       <span class="flex"></span>
 
 
       <!-- Toolbar icons -->
-
-      <paper-icon-button icon="help"></paper-icon-button>
-      <paper-icon-button icon="communication:call" data-route="contact" on-tap="onDataRouteClick"></paper-icon-button>
-      <paper-icon-button icon="shopping-cart"></paper-icon-button>
-
-      <div class="bottom bottom-container layout horizontal">
-          Хятадын “Таобао” интернэт дэлгүүрийн каталог Монгол хэл дээр гарлаа!
-      </span>
-
+      <div class="toolbar-btn-group">
+        <paper-button><paper-icon-button icon="account-circle"></paper-icon-button>нэвтрэх</paper-button>
+        <paper-button><paper-icon-button icon="shopping-cart"></paper-icon-button>[0]</paper-button>
       </div>
+
+      <!--<div class="bottom bottom-container layout horizontal">
+          <div>Хятадын “Таобао” интернэт дэлгүүрийн каталог Монгол хэл дээр гарлаа!</div>
+          <paper-icon-button icon="help"></paper-icon-button>
+        <paper-icon-button icon="communication:call" data-route="contact" on-tap="onDataRouteClick"></paper-icon-button>
+      </div>-->
 
     </paper-toolbar>
 
