@@ -23,7 +23,7 @@ paper-toolbar {
 search-box {
 	margin-left: 100px;
 	background: #FFF;
-	border-radius: 3px
+	border-radius: 20px
 }
 .toolbar-btn-group {
 	border-radius: 22px;
@@ -33,6 +33,7 @@ search-box {
 	padding: 0;
 	font-size: 12px;
 	color: #ccc;
+	border-radius: 22px;
 }
 .toolbar-btn-group paper-button:hover {
 	color: #FFF;
