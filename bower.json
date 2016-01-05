@@ -8,14 +8,9 @@
     "platinum-elements": "PolymerElements/platinum-elements#^1.2.0",
     "polymer": "Polymer/polymer#^1.2.3",
     "page": "visionmedia/page.js#~1.6.4",
-    "paper-menu": "PolymerElements/paper-menu#4fecb43601",
     "d3": "~3.5.6"
   },
   "devDependencies": {
     "web-component-tester": "*"
-  },
-  "ignore": [],
-  "resolutions": {
-    "paper-menu": "4fecb43601"
   }
 }
