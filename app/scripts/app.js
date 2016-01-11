@@ -78,7 +78,7 @@ Copyright (c) 2015 ubs121
 
   };
 
-   
-
+  app.carts = [];
+  app.carts_count = 0;
 
 })(document);
