@@ -54,6 +54,12 @@ Copyright (c) 2015 ubs121
         text-transform: uppercase;
         font-weight: bold;
         padding: 5px 0;
+        color: #444;
+        text-decoration: none;
+      }
+
+      .paper-font-body1:hover {
+        text-decoration: underline;
       }
 
       .item.p-catalog {
@@ -110,7 +116,7 @@ Copyright (c) 2015 ubs121
       <template is="dom-repeat" items="[[items]]" >
         <paper-material class="item layout vertical" elevation="1">
           <img src="{{item.img}}">
-          <div class="paper-font-body1">{{item.name}}</div>
+          <a href="/p/{{item._id}}" class="paper-font-body1">{{item.name}}</a>
           <div class="attr">10'000₮</div>
           <div class="actions">
             <paper-icon-button icon="refresh"></paper-icon-button>
@@ -168,6 +174,9 @@ Copyright (c) 2015 ubs121
           ];
 
           this.tags = [
+            {'_id': 1, 'color': 'red'},
+            {'_id': 2, 'color': 'blue'},
+            {'_id': 3, 'color': 'yellow'}
           ];
 
           this.items = [

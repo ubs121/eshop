@@ -66,13 +66,14 @@ Copyright (c) 2015 ubs121
 
     <!-- Main Toolbar -->
     <paper-toolbar id="mainToolbar" class="medium-tall" style="height: 80px">
-      <div class="logo"><img src="styles/logo.png" width="200"></div>
+      <a href="/home" class="logo"><img src="styles/logo.png" width="200"></a>
       <search-box class="flex"></search-box>
       <span class="flex"></span>
 
 
       <!-- Toolbar icons -->
       <div class="toolbar-btn-group">
+        <paper-button onclick="app.onDataRouteClick('contact')"><paper-icon-button icon="communication:call"></paper-icon-button>Холбоо барих</paper-button>
         <paper-button><paper-icon-button icon="account-circle"></paper-icon-button>нэвтрэх</paper-button>
         <paper-button><paper-icon-button icon="shopping-cart"></paper-icon-button>[0]</paper-button>
       </div>
@@ -80,7 +81,6 @@ Copyright (c) 2015 ubs121
       <!--<div class="bottom bottom-container layout horizontal">
           <div>Хятадын “Таобао” интернэт дэлгүүрийн каталог Монгол хэл дээр гарлаа!</div>
           <paper-icon-button icon="help"></paper-icon-button>
-        <paper-icon-button icon="communication:call" data-route="contact" on-tap="onDataRouteClick"></paper-icon-button>
       </div>-->
 
     </paper-toolbar>
@@ -95,11 +95,8 @@ Copyright (c) 2015 ubs121
 
       <section data-route="p-info">
         <paper-material elevation="1">
-          <h2 class="page-title">
-          Product info:<span>{{params.id}}</span>
-          </h2>
-          <div>This is <span>{{params.id}}</span>'s section</div>
-
+          <h2 class="page-title">Product info:<span>{{params.id}}</span></h2>
+          <!-- <div>This is <span>{{params.id}}</span>'s section</div> -->
           <p-info></p-info>
         </paper-material>
       </section>

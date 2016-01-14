@@ -3,18 +3,122 @@
 Copyright (c) 2015 ubs121
 -->
 <link rel="import" href="../bower_components/polymer/polymer.html">
-
+<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <dom-module id="p-info">
   <template>
     <style include="shared-styles"></style>
     <style>
-      :host {
-        display: block;
-      }
+        :host {display: block;font-family: Arial; }
+        .flex-horizontal {@apply(--layout-horizontal);}
+        a {text-decoration: none}
+        ul.color {float: left; padding: 0; margin: 30px 0 20px 140px; list-style: none;}
+        ul.color li{float: left;}
+        ul.color li a {display: block; width: 20px; height: 20px; border: 1px solid #FFF; margin-right: 10px}
+        ul.color li.current a {border-color: #0ea3e1}
+        a.color1 {background-color: #000}
+        a.color2 {background-color: #e20236}
+        a.color3 {background-color: #00529e}
+        a.color4 {background-color: #FFF}
+        .product {text-align: center;}
+        .product-name, .product-price {color: #1a1a1a; font-size: 30px; font-family: "Times new Roman"}
+        .product-price {font-size: 24px; margin: 30px 0}
+        .button{display: block; width: 218px; height: 36px; text-align: center; color: #FFF; font-size: 12px; text-transform: uppercase; border-radius: 5px; margin: 0 auto; line-height: 36px;}
+        a.basketAdd {background: url(../images/default-x.png) 0 -240px repeat-x;}
+        a.basketAdd:hover {background: url(../images/default-x.png) 0 -500px repeat-x;}
+        a.waitlist {background: url(../images/default-x.png) 0 -280px repeat-x; margin-top: 25px;}
+        a.waitlist:hover {background: url(../images/default-x.png) 0 -540px repeat-x;}
+        paper-tab {text-transform: uppercase;}
+        .tab-content {padding: 20px 10px 0; font-size: 12px;}
+        table.attr, table.attr td { border-collapse: collapse;}
+        table.attr td {border: 1px solid #d6d7db; padding: 10px}
+        table.attr td.left {width: 200px; color: #555; text-transform: uppercase; color: #709700}
     </style>
-    <h2 class="page-title"><span>{{greeting}}</span></h2>
+    <div class="container flex-horizontal">
+      <div style="width: 380px;">
+          <img src="../data/iphone5.png" style="width: 313px; height: 319px">
+          <ul class="color">
+              <li><a href="javascript:void(0)" class="color1"></a></li>
+              <li><a href="javascript:void(0)" class="color2"></a></li>
+              <li><a href="javascript:void(0)" class="color3"></a></li>
+              <li><a href="javascript:void(0)" class="color4"></a></li>
+          </ul>
+      </div>
+      <div class="product">
+          <img src="../images/golomt_icon.jpg" style="margin-bottom: 20px;">
+          <div class="product-name">Зөөврийн хард</div>
+          <div class="product-price">146,107.50₮</div>
+          <a href="" class="button basketAdd">Сагсанд нэмэх</a>
+          <a href="" class="button waitlist">хүсэлийн жагсаалт</a>
+      </div>
+      <div style="width: 50%; padding-left: 40px;">
+          <paper-tabs selected="{{selected}}">
+            <paper-tab>Үзүүлэлт</paper-tab>
+            <paper-tab>Тайлбар</paper-tab>
+          </paper-tabs>
+
+          <iron-pages selected="{{selected}}">
+            <div class="tab-content">
+              <table class="attr">
+                  <tr>
+                      <td class="left">
+                          <span id="img1"></span>CPU
+                      </td>
+                      <td>A6 chip</td>
+                  </tr>
+                  <tr>
+                      <td class="left">
+                          <span id="img2"></span>Үйлдлийн систем
+                      </td>
+                      <td>Apple -  ийн өөрийн үйлдлийн систем</td>
+                  </tr>
+                  <tr>
+                      <td class="left">
+                          <span id="img3"></span>Санах ойн карт
+                      </td>
+                      <td>Nano-SIM</td>
+                  </tr>
+                  <tr>
+                      <td class="left">
+                          <span id="img4"></span>санах ой
+                      </td>
+                      <td>iPhone 5 is not compatible with existing micro-SIM cards.</td>
+                  </tr>
+                  <tr>
+                      <td class="left">
+                          <span id="img5"></span>холбогч
+                      </td>
+                      <td>Lightning</td>
+                  </tr>
+                  <tr>
+                      <td class="left">
+                          <span id="img6"></span>Дэлгэц
+                      </td>
+                      <td>4-inch (diagonal) Retina display, 1136-by-640 resolution, 326 ppi</td>
+                  </tr>
+                  <tr class="last">
+                      <td class="left">
+                          <span id="img12"></span>батарей
+                      </td>
+                      <td>Talk time: Up to 8 hours on 3G, Browsing time: Up to 8 hours on LTE, Up to 8 hours on 3G, Up to 10 hours on Wi-Fi</br>
+                          Standby time: Up to 225 hours</td>
+                  </tr>
+              </table>
+            </div>
+            <div class="tab-content">
+                textarea textare textatrea textarea textarea textarea textarea textarea textarea
+                textarea textare textatrea textarea textarea textarea textarea textarea textarea
+                textarea textare textatrea textarea textarea textarea textarea textarea textarea
+                textarea textare textatrea textarea textarea textarea textarea textarea textarea
+                textarea textare textatrea textarea textarea 
+            </div>
+          </iron-pages>
+      </div>
+    </div>
+
+    <!-- <h2 class="page-title"><span>{{greeting}}</span></h2>
     <span class="paper-font-body2">Update text to change the greeting.</span>
-    <!-- Listens for "input" event and sets greeting to <input>.value -->
+    Listens for "input" event and sets greeting to <input>.value
     <input class="paper-font-body2" value="{{greeting::input}}">
 
     <br/>
@@ -31,7 +135,7 @@ Copyright (c) 2015 ubs121
 
     <sidebar>
         Барааны талаар нэмэлт мэдээлэл
-    </sidebar>
+    </sidebar> -->
 
   </template>
 
@@ -48,6 +152,10 @@ Copyright (c) 2015 ubs121
             value: 'Welcome!',
             notify: true
           }
+        },
+
+        ready: function() {
+          this.selected = 0;
         }
       });
     })();

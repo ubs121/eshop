@@ -60,8 +60,8 @@ Copyright (c) 2015 ubs121
   });
 
   // Close drawer after menu item is selected if drawerPanel is narrow
-  app.onDataRouteClick = function() {
-
+  app.onDataRouteClick = function(id) {
+    app.route = id;  
   };
 
   // Scroll page to top and expand header
