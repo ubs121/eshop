@@ -46,15 +46,15 @@ Copyright (c) 2015 ubs121
       }
 
       .categ:hover, .categ.active {
-        border-color: #444;
-        color: #333;
+        border-color: #709700;
+        color: #709700;
       }
 
       .paper-font-body1 {
         text-transform: uppercase;
         font-weight: bold;
         padding: 5px 0;
-        color: #444;
+        color: #709700;
         text-decoration: none;
       }
 
@@ -63,7 +63,7 @@ Copyright (c) 2015 ubs121
       }
 
       .item.p-catalog {
-        height: 200px;
+        height: 185px;
       }
 
       .attr {
@@ -76,8 +76,9 @@ Copyright (c) 2015 ubs121
       }
 
       .actions paper-icon-button {
-        background: #eee;
+        background: #709700;
         border-radius: 20px;
+        color: #FFF;
       }
   </style>
 
@@ -115,11 +116,11 @@ Copyright (c) 2015 ubs121
       <div class="flex">
       <template is="dom-repeat" items="[[items]]" >
         <paper-material class="item layout vertical" elevation="1">
-          <img src="{{item.img}}">
+          <img src="{{item.img}}" style="height: 102px">
           <a href="/p/{{item._id}}" class="paper-font-body1">{{item.name}}</a>
           <div class="attr">10'000₮</div>
           <div class="actions">
-            <paper-icon-button icon="refresh"></paper-icon-button>
+            <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
             <paper-icon-button icon="add-shopping-cart" title="Сагсанд нэмэх"></paper-icon-button>
           </div>
         </paper-material>

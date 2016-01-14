@@ -61,6 +61,7 @@ Copyright (c) 2015 ubs121
 
   // Close drawer after menu item is selected if drawerPanel is narrow
   app.onDataRouteClick = function(id) {
+    console.log("id >>>>" + id);
     app.route = id;  
   };
 
