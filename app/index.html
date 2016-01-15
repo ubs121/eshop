@@ -75,7 +75,7 @@ Copyright (c) 2015 ubs121
       <div class="toolbar-btn-group">
         <paper-button onclick="app.onDataRouteClick('contact')"><paper-icon-button icon="communication:call"></paper-icon-button>Холбоо барих</paper-button>
         <paper-button><paper-icon-button icon="account-circle"></paper-icon-button>нэвтрэх</paper-button>
-        <paper-button><paper-icon-button icon="shopping-cart"></paper-icon-button>[<span id="carts_count">{{carts_count}}</span>]</paper-button>
+        <a data-route="cart" href="/cart-view" on-click="onDataRouteClick" ><paper-button><paper-icon-button icon="shopping-cart"></paper-icon-button>[<span id="carts_count">{{carts_count}}</span>]</paper-button></a>
       </div>
 
       <!--<div class="bottom bottom-container layout horizontal">
@@ -92,6 +92,16 @@ Copyright (c) 2015 ubs121
       <section data-route="home">
         <p-catalog></p-catalog>
       </section>
+
+      <section data-route="cart">
+        <paper-material elevation="1">
+          <h2 class="page-title">Cart List {{ carts_count }} items </h2>
+
+          <cart-catalog></cart-catalog>
+
+        </paper-material>
+      </section>
+
 
       <section data-route="p-info">
         <paper-material elevation="1">

@@ -79,7 +79,10 @@ Copyright (c) 2015 ubs121
 
   };
 
-  app.carts = [];
-  app.carts_count = 0;
+  app.carts = [
+    {name: 'бараа2', '_id': 2, 'img': 'data/baraa2.png'},
+    {name: 'бараа3', '_id': 3, 'img': 'data/baraa3.png'},
+  ];
+  app.carts_count = 2;
 
 })(document);

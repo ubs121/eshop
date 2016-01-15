@@ -263,3 +263,157 @@ Copyright (c) 2015 ubs121
   </script>
 
 </dom-module>
+
+
+<dom-module id="cart-catalog">
+  <style>
+    :host {
+      display: block;
+    }
+
+    aside {
+      background: white;
+      display: block;
+      height: auto;
+      width: 200px;
+    }
+
+    .item {
+        display: block;
+        float: left;
+        height: 140px;
+        width: 220px;
+        margin: 10px;
+        padding: 10px;
+        background: white;
+      }
+
+      .item > .actions {
+        color: gray;
+      }
+
+      .categ {
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        font-size: 12px;
+        padding: 7px 20px;
+        color: #999;
+        margin-top: 5px;
+      }
+
+      .categ:hover, .categ.active {
+        border-color: #444;
+        color: #333;
+      }
+
+      .paper-font-body1 {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 0;
+      }
+
+      .item.p-catalog {
+        height: 200px;
+      }
+
+      .attr {
+        font-size: 11px;
+        color: #999;
+      }
+
+      .actions {
+        text-align: right;
+      }
+
+      .actions paper-icon-button {
+        background: #eee;
+        border-radius: 20px;
+      }
+  </style>
+
+  <template>
+
+
+    <div class="layout horizontal" style="margin-top: 15px;">
+
+
+       <!-- TODO: Эрэмбэлэх: үнээр, нийлүүлэгчээр -->
+       <!-- TODO: Сагсанд бараа нэмэх -->
+       <!-- TODO: Төлбөр хийх -->
+
+      <!-- барааны жагсаалт-->
+      <div class="flex">
+        <table class="table table-striped">
+          <thead>
+              <tr>
+              <th>Зураг <span>[[carts.length]]</span></th>
+              <th>Нэр</th>
+              <th>Үнэ</th>
+              <th>Тоо ширхэг</th>
+              </tr>
+          </thead>
+          <tbody>
+            <template is="dom-repeat" items="[[app.carts]]" >
+              <tr>
+                <td><img src="{{item.img}}"></td>
+                <td bind-value="{{name}}"></td>
+                <td>Table cell</td>
+                <td>Table cell</td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+
+      </div>
+
+
+    </div>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'cart-catalog',
+        properties: {
+          items: {
+            type: Array,
+            notify: true,
+          },
+          tags: {
+              type: Array
+          }
+        },
+
+        ready: function() {
+        // TODO: каталогит icon нэмэх. http://www.flaticon.com/packs/shopping
+          this.menu = [
+            {name: 'хувцас', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
+            {name: 'гоёл', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
+            {name: 'гэр ахуй', 'count': 12, 'color': '#E7560D'},
+            {name: 'хүнс', 'count': 12, 'color': '#E7560D'},
+            {name: 'компютер', 'color': '#FDAE6B', '_tags': []},
+            {name: 'бичиг хэрэг', 'count': '3', 'color':'pink', 'rank': 4.5},
+            {name: 'спорт', 'count': '5', 'rank': 4.5, 'color': '#FDAE6B'},
+            {name: 'авто', 'count': '5', 'rank': 4.5, 'color': '#FDAE6B'}
+          ];
+
+          this.tags = [ ];
+
+          this.items = app.carts;
+
+          console.log(app.carts);
+        },
+
+        itemUri: function(id) {
+          return "/p/" + id;
+        },
+
+        
+      });
+    })();
+  </script>
+
+</dom-module>
