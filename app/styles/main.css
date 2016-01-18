@@ -38,3 +38,10 @@ search-box {
 .toolbar-btn-group paper-button:hover {
 	color: #FFF;
 }
+.page-title {
+	font-weight: normal;
+    color: #709700;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
