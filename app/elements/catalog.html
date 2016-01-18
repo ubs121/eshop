@@ -7,6 +7,9 @@ Copyright (c) 2015 ubs121
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 
+
+<link rel="import" href="gpay-btn/gpay-btn.html">
+
 <script src="../bower_components/d3/d3.min.js"></script>
 
 <dom-module id="p-catalog">
@@ -118,7 +121,7 @@ Copyright (c) 2015 ubs121
         <paper-material class="item layout vertical" elevation="1">
           <img src="{{item.img}}" style="height: 102px">
           <a href="/p/{{item._id}}" class="paper-font-body1">{{item.name}}</a>
-          <div class="attr">10'000₮</div>
+          <div class="attr">{{item.price}}</div>
           <div class="actions">
             <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
             <a on-click="_toCart"><paper-icon-button icon="add-shopping-cart" title="Сагсанд нэмэх"></paper-icon-button></a>
@@ -180,14 +183,7 @@ Copyright (c) 2015 ubs121
             {'_id': 3, 'color': 'yellow'}
           ];
 
-          this.items = [
-            {name: 'бараа1', '_id': 1, 'img': 'data/baraa1.png'},
-            {name: 'бараа2', '_id': 2, 'img': 'data/baraa2.png'},
-            {name: 'бараа3', '_id': 3, 'img': 'data/baraa3.png'},
-            {name: 'бараа4', '_id': 4, 'img': 'data/baraa4.png'},
-            {name: 'бараа5', '_id': 5, 'img': 'data/baraa5.png'},
-            {name: 'бараа6', '_id': 6, 'img': 'data/baraa6.png'}
-          ];
+          this.items = [{"productID":"p00003","name":"Ном \"Мөнх Тэнгэрийн Монгол дор\"","price":"51750","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"productID":"p00004","name":"Ном \"УБ хөтөч\"","price":"30594.61","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"productID":"p00005","name":"ОЭШБХЭмхэтгэл 2012он","price":"9626.65","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"productID":"p00006","name":"ОЭШБХЭмхэтгэл 2013он","price":"18016.68","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"productID":"p00007","name":"ОЭШБХЭмхэтгэл 2014он","price":"29325","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"productID":"p00008","name":"Playing Love /морин хуурын CD/","price":"8280","quantityonhand":"50","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00009","name":"Discover Mongolia /танилцуулга CD/","price":"14145","quantityonhand":"4","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p0001","name":"Ном \"Биеийн тамир спортын хууль\"","price":"3450","quantityonhand":"5","categoryID":"books","image":"data/none.jpg"},{"productID":"p00010","name":"Гончигсумлаа CD","price":"11500","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00011","name":"Pentatonic CD","price":"5750","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00012","name":"Хүүхдийн дууны DVD","price":"6670","quantityonhand":"10","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00013","name":"Мемопад Вестерн юнион","price":"690","quantityonhand":"100","categoryID":"memopad","image":"data/none.jpg"},{"productID":"p00014","name":"Мемопад Е банк /олон өнгөтэй/","price":"1000","quantityonhand":"100","categoryID":"memopad","image":"data/none.jpg"},{"productID":"p00015","name":"Мемопад хатуу хавтастай","price":"2438","quantityonhand":"30","categoryID":"memopad","image":"data/none.jpg"},{"productID":"p00016","name":"Цаасан тор /жижиг/","price":"552","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p00017","name":"Цаасан тор /дунд/","price":"746.3","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p00018","name":"Цаасан тор /том/","price":"920","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p00019","name":"Шинэ жилийн бэлгийн цагаан цаасан тор","price":"1391.22","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p0002","name":"Ном \"Монголын эрсдэлтэй усан ая\"","price":"11500","quantityonhand":"6","categoryID":"books","image":"data/none.jpg"}];
 
           this.filter();
           this.find();
@@ -230,10 +226,10 @@ Copyright (c) 2015 ubs121
         _toCart: function(e) {
           var id = e.model.index;
           var isRecorded = false;
-          var newId = this.items[id]['_id'];
+          var newId = this.items[id]['productID'];
           app.carts.forEach(function(entry) {
 
-            if (newId == entry['_id'])
+            if (newId == entry['productID'])
             {
               isRecorded = true;
             }
@@ -336,7 +332,6 @@ Copyright (c) 2015 ubs121
 
     <div class="layout horizontal" style="margin-top: 15px;">
 
-
        <!-- TODO: Эрэмбэлэх: үнээр, нийлүүлэгчээр -->
        <!-- TODO: Сагсанд бараа нэмэх -->
        <!-- TODO: Төлбөр хийх -->
@@ -346,23 +341,44 @@ Copyright (c) 2015 ubs121
         <table class="table table-striped">
           <thead>
               <tr>
-              <th>Зураг <span>[[carts.length]]</span></th>
+              <th>Зураг <span>{{ cartsCount }}</span></th>
               <th>Нэр</th>
               <th>Үнэ</th>
               <th>Тоо ширхэг</th>
+              <th>Нийт</th>
               </tr>
           </thead>
           <tbody>
-            <template is="dom-repeat" items="[[app.carts]]" >
+            <template is="dom-repeat" items="{{ cartItems }}" >
               <tr>
-                <td><img src="{{item.img}}"></td>
-                <td bind-value="{{name}}"></td>
-                <td>Table cell</td>
-                <td>Table cell</td>
+                <td><img src="{{item.image}}"></td>
+                <td>{{item.name}}</td>
+                <td>{{_toFixed( item.price, 2, 3)}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{_toFixed(item.total, 2, 3)}}</td>
               </tr>
             </template>
           </tbody>
+          <tfoot>
+            <tr>
+              <th colspan="4">Нийт</th>
+              <th>{{_toFixed( cartsTotal, 2, 3)}}</th>
+            </tr>
+          </tfoot>
         </table>
+
+
+        <g-pay
+       merchant="100000000034033"
+       invoice=""
+       product=""
+       price={{ cartsTotal }}
+       currency="MNT"
+       user="suldee"
+       hash="{{ stamp }}"
+       callback="#"
+       size="small">
+        </g-pay>
 
       </div>
 
@@ -378,15 +394,33 @@ Copyright (c) 2015 ubs121
       Polymer({
         is: 'cart-catalog',
         properties: {
-          items: {
+          cartItems: {
             type: Array,
             notify: true,
+          },
+          letters: ['a', 'b', 'c'],
+          cartsCount: {
+            type: String,
+          },
+          cartsTotal: {
+            type: String,
           },
           tags: {
               type: Array
           }
         },
-
+        publish: {
+          // won't reflect to an attribute
+          bigText: '',
+          // will reflect to an attribute
+          active: {value: false, reflect: true}
+        },
+        _toFixed: function( value, n, x) {
+          if (value) {
+            var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+            return parseFloat(value).toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+          }
+        },
         ready: function() {
         // TODO: каталогит icon нэмэх. http://www.flaticon.com/packs/shopping
           this.menu = [
@@ -402,9 +436,19 @@ Copyright (c) 2015 ubs121
 
           this.tags = [ ];
 
-          this.items = app.carts;
+          this.cartItems = app.carts;
 
-          console.log(app.carts);
+          /// this is total price for calculate
+          this.cartsTotal = "0";
+          for (var i=0; i<this.cartItems.length; i++) {
+            this.cartItems[i]['quantity'] = 1;
+            this.cartItems[i]['total'] = parseFloat(this.cartItems[i]['quantity']) * parseFloat(this.cartItems[i]['price']);
+
+            this.cartsTotal = parseFloat(this.cartsTotal) + parseFloat(this.cartItems[i]['total']);
+          }
+          /// end total price
+
+
         },
 
         itemUri: function(id) {

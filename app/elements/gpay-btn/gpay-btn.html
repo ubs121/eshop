@@ -1,0 +1,105 @@
+<!--
+ g-pay button
+
+ Copyright (c) Golomt Bank. All rights reserved.
+ author: ubs121
+-->
+
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+
+<dom-module id="g-pay">
+    <style>
+        :host {
+            display: inline-block;
+            overflow: hidden;
+            position: relative;
+            background-image: url('images/gpay.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 1px solid silver;
+        }
+    </style>
+    <template>
+    </template>
+
+</dom-module>
+
+
+<script>
+
+    'use strict';
+    Polymer({
+        is: "g-pay",
+
+        properties: {
+            invoice: String,
+            product: String,
+            hash: String,
+            price: String,
+            currency: String,
+            stamp: String,
+            merchant: String,
+            user: String,
+            callback: String,
+            size: {type: String, value: 'small', observer: '_sizeChanged'},
+            lang: {type: String, value: 'mon'}
+        },
+
+        listeners: {
+            'tap': '_tapHandler'
+        },
+
+        created: function () {
+            // TODO: check browser version
+            // TODO: OTP үүсгэх http://jsfiddle.net/nt18yhmL/
+
+        },
+
+        ready: function () {
+            if (!this.hasAttribute('role')) {
+                this.setAttribute('role', 'button');
+            }
+
+            this.setAttribute('title', 'Golomt Pay');
+        },
+
+        _sizeChanged: function (oldSize, newSize) {
+            if (this.size == 'small') {
+                this.style.width = '66px';
+                this.style.height = '22px';
+            } else if (this.size == 'medium') {
+                this.style.width = '90px';
+                this.style.height = '30px';
+            }
+        },
+
+        _tapHandler: function (e, detail, target) {
+            if (!this.disabled) {
+                // TODO: domain/host name олох
+                // TODO: санамсаргүй url үүсгэх, тухайн сайт cros дээрээ golomt-н хаягийг зөвшөөрсөн байх ёстой
+                console.log("Host: " + window.location + '?' + this.amount);
+//
+               var popup = window.open("http://192.168.8.78:5000/gpay.html?"
+                       + "product="        + this.product
+                       + "&hash="          + this.hash
+                       + "&price="         + this.price
+                       + "&currency=" + this.currency
+                       + "&merchant="    + this.merchant
+                       + "&user="        + this.user
+                       + "&callback="      + this.callback
+                       + "&invoice="     + this.invoice
+                       + "&stamp="         + this.stamp,
+
+                       "_blank",
+                       "scrollbars=no, top=10, left=100, width=400, height=800");
+//                window.open("http://192.168.8.78:5000/merchant/login.html");
+
+            }
+        }
+    });
+
+
+</script>
