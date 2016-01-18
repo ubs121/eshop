@@ -317,12 +317,12 @@ Copyright (c) 2015 ubs121
       </table>
       <g-pay
          merchant="100000000034033"
-         invoice=""
-         product=""
+         invoice="{{ cartInvoice }}"
+         product="{{ cartProduct }}"
          price={{ cartsTotal }}
          currency="MNT"
          user="suldee"
-         hash="{{ stamp }}"
+         hash="{{ cartStamp }}"
          callback="#"
          size="medium"
          style="margin-top: 20px;">
