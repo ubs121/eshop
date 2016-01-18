@@ -11,6 +11,8 @@ Copyright (c) 2015 ubs121
 <link rel="import" href="gpay-btn/gpay-btn.html">
 
 <script src="../bower_components/d3/d3.min.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+<script src="../bin/jsencrypt.js"></script>
 
 <dom-module id="p-catalog">
   <style>
@@ -175,7 +177,7 @@ Copyright (c) 2015 ubs121
             {'_id': 3, 'color': 'yellow'}
           ];
 
-          this.items = [{"productID":"p00003","name":"Ном \"Мөнх Тэнгэрийн Монгол дор\"","price":"51750","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"productID":"p00004","name":"Ном \"УБ хөтөч\"","price":"30594.61","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"productID":"p00005","name":"ОЭШБХЭмхэтгэл 2012он","price":"9626.65","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"productID":"p00006","name":"ОЭШБХЭмхэтгэл 2013он","price":"18016.68","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"productID":"p00007","name":"ОЭШБХЭмхэтгэл 2014он","price":"29325","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"productID":"p00008","name":"Playing Love /морин хуурын CD/","price":"8280","quantityonhand":"50","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00009","name":"Discover Mongolia /танилцуулга CD/","price":"14145","quantityonhand":"4","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p0001","name":"Ном \"Биеийн тамир спортын хууль\"","price":"3450","quantityonhand":"5","categoryID":"books","image":"data/none.jpg"},{"productID":"p00010","name":"Гончигсумлаа CD","price":"11500","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00011","name":"Pentatonic CD","price":"5750","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00012","name":"Хүүхдийн дууны DVD","price":"6670","quantityonhand":"10","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00013","name":"Мемопад Вестерн юнион","price":"690","quantityonhand":"100","categoryID":"memopad","image":"data/none.jpg"},{"productID":"p00014","name":"Мемопад Е банк /олон өнгөтэй/","price":"1000","quantityonhand":"100","categoryID":"memopad","image":"data/none.jpg"},{"productID":"p00015","name":"Мемопад хатуу хавтастай","price":"2438","quantityonhand":"30","categoryID":"memopad","image":"data/none.jpg"},{"productID":"p00016","name":"Цаасан тор /жижиг/","price":"552","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p00017","name":"Цаасан тор /дунд/","price":"746.3","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p00018","name":"Цаасан тор /том/","price":"920","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p00019","name":"Шинэ жилийн бэлгийн цагаан цаасан тор","price":"1391.22","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"productID":"p0002","name":"Ном \"Монголын эрсдэлтэй усан ая\"","price":"11500","quantityonhand":"6","categoryID":"books","image":"data/none.jpg"}];
+          this.items = [{"_id":"p00003","name":"Ном \"Мөнх Тэнгэрийн Монгол дор\"","price":"51750","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"_id":"p00004","name":"Ном \"УБ хөтөч\"","price":"30594.61","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"_id":"p00005","name":"ОЭШБХЭмхэтгэл 2012он","price":"9626.65","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"_id":"p00006","name":"ОЭШБХЭмхэтгэл 2013он","price":"18016.68","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"_id":"p00007","name":"ОЭШБХЭмхэтгэл 2014он","price":"29325","quantityonhand":"20","categoryID":"books","image":"data/none.jpg"},{"_id":"p00008","name":"Playing Love /морин хуурын CD/","price":"8280","quantityonhand":"50","categoryID":"CD_DVD","image":"data/none.jpg"},{"_id":"p00009","name":"Discover Mongolia /танилцуулга CD/","price":"14145","quantityonhand":"4","categoryID":"CD_DVD","image":"data/none.jpg"},{"_id":"p0001","name":"Ном \"Биеийн тамир спортын хууль\"","price":"3450","quantityonhand":"5","categoryID":"books","image":"data/none.jpg"},{"_id":"p00010","name":"Гончигсумлаа CD","price":"11500","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"},{"_id":"p00011","name":"Pentatonic CD","price":"5750","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"},{"_id":"p00012","name":"Хүүхдийн дууны DVD","price":"6670","quantityonhand":"10","categoryID":"CD_DVD","image":"data/none.jpg"},{"_id":"p00013","name":"Мемопад Вестерн юнион","price":"690","quantityonhand":"100","categoryID":"memopad","image":"data/none.jpg"},{"_id":"p00014","name":"Мемопад Е банк /олон өнгөтэй/","price":"1000","quantityonhand":"100","categoryID":"memopad","image":"data/none.jpg"},{"_id":"p00015","name":"Мемопад хатуу хавтастай","price":"2438","quantityonhand":"30","categoryID":"memopad","image":"data/none.jpg"},{"_id":"p00016","name":"Цаасан тор /жижиг/","price":"552","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"_id":"p00017","name":"Цаасан тор /дунд/","price":"746.3","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"_id":"p00018","name":"Цаасан тор /том/","price":"920","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"_id":"p00019","name":"Шинэ жилийн бэлгийн цагаан цаасан тор","price":"1391.22","quantityonhand":"200","categoryID":"bag","image":"data/none.jpg"},{"_id":"p0002","name":"Ном \"Монголын эрсдэлтэй усан ая\"","price":"11500","quantityonhand":"6","categoryID":"books","image":"data/none.jpg"}];
 
           this.filter();
           this.find();
@@ -218,10 +220,10 @@ Copyright (c) 2015 ubs121
         _toCart: function(e) {
           var id = e.model.index;
           var isRecorded = false;
-          var newId = this.items[id]['productID'];
+          var newId = this.items[id]['_id'];
           app.carts.forEach(function(entry) {
 
-            if (newId == entry['productID'])
+            if (newId == entry['_id'])
             {
               isRecorded = true;
             }
@@ -329,6 +331,35 @@ Copyright (c) 2015 ubs121
          size="medium"
          style="margin-top: 20px;">
       </g-pay>
+
+      <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAof4dyaB+RgOoxOh1u7uZ8NE8DWLPwB8Y1ReFP5IhKZQcYBlq
+87tqay4F0h9cDhhgZtkd1CaWlOox2gc0heGDVn10FrO8o+CBBO9z3v13sL5R4q8E
+CQ2Pp1wzSWopLAzzP6C+IToeGlp36N/Mve8myH4W+cFOtD8y3q1frbxsgoJ2WGUw
+BXezUcrvwqQef+Z/VXk1iNB/CTOiia/3QZDjKx+o8RHdP7Yd/hMUKChGyWFSDGaV
+rfqTESNO3hnpJoE9ALbRlD93xEO8KbWd6HL49MvptvPMkSLhy8R1o4SJ1TmlP69C
+rXD5NsGlhF5tZ6W9DE/+T/VKEF5mLKPCS1Go9QIDAQABAoIBABeGvnC//FbSxToD
+wMWJE2xkFuKizSVL3uFjzxhScrqFJjHWvy+yslvqjTHdGBN7+tQ1CB39lLT/5kmR
+7lDbVaXEBo4dgHIUcuhyllN2YGGs4luXq3BdJdXakCBDaMNbBiDhiXtt411UckHB
+7wxOpUVM+q0/I90NqKeqalDjIqc5bCQtaGoxuEp4oxjOgIhJj5soVc/ndMzk/h4h
+1a1Y9fTXHFbxhJF0fajUcN/Z/+ftk8DF73VFcRrQsFkZPYbS6laONMPrF+uKI36+
+l0czg93h83vHeCL1G7dTlTLjqRJU4x54SKngx7Uu6rYB+mP1vzP5xrOfV0GvlodI
+93r3oikCgYEAxTwAYnZ+MZ0fL7Im115LWKPBJUQVHVq+3++7k6a1b5VyKmcpjeWU
+ruBqmSrSlTSeHl4BN2zkQFXFLovzcRUjshpFh4kk9h7hwtu3G5I//UBsW+1s4eEY
+DslB2lDopzbp6W4+rvykT8vUWQSlKBnvTdKlCRRImRBWn+3QbUx6xBcCgYEA0kIP
+lEekSSoTXehRIblaYzEaGg1mGdvPGthbB+kAQ7bkmaYZRknpFT8Pji+NwJdbxFIY
+i7sC5NOGtWLx18N2Jf/Dqg9pJ+cP6XdAPktdjvOjdRqDbCfOLn/ritlxxDnGF7aq
+wBC6HUnT25Acq0vhRqxGIcorrC9YZ3Bh3MUyhtMCgYEAw9W/zAQ7aKfJv2H0jwNh
+bLGrpYTkMjFYNKGkbgapQBHzOYcVC39ZEgphzZNnZB7KoPxV2OKWAAsprf3nyfBj
+cQQE5X6W5InlP8VJGmcsghjlfqFP6zfE22mZqVuMpfswZkbAlp7jxxdr0Ld8BUU7
+BtqQY2Nwcgp2+HT47o1xmCECgYASmsPUJA62ZqG2EoNzT3pfAo5DteHN8fQ+dNyB
+M63RUBKkQd1Eqe+U8LKIq06ItxvooDcJzi9wXgMyc6HgrKv8qsf+eUSdwkVXLDUk
+DfkmWAqjpwfv/wmwdaM68witC0uq93/eZNyDEPBNIlBXG+zAGyhNfx0kLEBPTtNp
+/Iz+/wKBgBQSAGFWHh92+VZroobC0jHiHyso3AVCQvh7vaPKqEy05AFVzdfGBAI9
+LNZDjNYeFYBtUp1GWcILLe4gwvswJ33mRIqqVa4kEjMMakLysHZ38/qPOWqQr1i5
+bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
+-----END RSA PRIVATE KEY-----</textarea>
+
     </div>
 
   </template>
@@ -349,6 +380,15 @@ Copyright (c) 2015 ubs121
             type: String,
           },
           cartsTotal: {
+            type: String,
+          },
+          cartInvoice: {
+            type: String,
+          },
+          cartProduct: {
+            type: String,
+          },
+          cartStamp: {
             type: String,
           },
           tags: {
@@ -386,14 +426,34 @@ Copyright (c) 2015 ubs121
 
           /// this is total price for calculate
           this.cartsTotal = "0";
+          this.cartProduct = "";
           for (var i=0; i<this.cartItems.length; i++) {
-            this.cartItems[i]['quantity'] = 1;
+            if(!this.cartItems[i]['quantity']) { this.cartItems[i]['quantity'] = 1; }
             this.cartItems[i]['total'] = parseFloat(this.cartItems[i]['quantity']) * parseFloat(this.cartItems[i]['price']);
 
             this.cartsTotal = parseFloat(this.cartsTotal) + parseFloat(this.cartItems[i]['total']);
+            this.cartProduct += this.cartItems[i]['name']+' ^'+this.cartItems[i]['quantity'] +' ';
           }
           /// end total price
 
+          /// start inoice number gene
+          var d = new Date();
+          function f(n) { return n < 10 ? '0' + n : n; }  
+          var random_num = Math.floor(Math.random() * (9999 -  1000)) + 1000;
+          random_num = d.getFullYear() + f(d.getMonth()+1) + f(d.getDate()) + random_num;
+          this.cartInvoice = random_num;
+          /// end inoice number gene
+
+          console.log('Invoice :' + this.cartInvoice);
+          console.log('Product :' + this.cartProduct);
+          console.log('Price :' + this.cartsTotal);
+
+          var rsa = new RSAKey();
+          rsa.readPrivateKeyFromPEMString(this.$.privkey.value);
+          var hashAlg = 'sha256';
+          var hSig = rsa.signString(this.cartProduct +''+ this.cartsTotal +'MNT', hashAlg);
+
+          this.cartStamp = linebrk(hSig, 64);
 
         },
 
