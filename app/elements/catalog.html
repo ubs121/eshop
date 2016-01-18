@@ -32,13 +32,9 @@ Copyright (c) 2015 ubs121
         float: left;
         height: 140px;
         width: 220px;
-        margin: 10px;
+        margin: 15px;
         padding: 10px;
         background: white;
-      }
-
-      .item > .actions {
-        color: gray;
       }
 
       .categ {
@@ -57,10 +53,10 @@ Copyright (c) 2015 ubs121
 
       .paper-font-body1 {
         text-transform: uppercase;
-        font-weight: bold;
         padding: 5px 0;
-        color: #709700;
+        color: #444;
         text-decoration: none;
+        line-height: 16px;
       }
 
       .paper-font-body1:hover {
@@ -76,14 +72,13 @@ Copyright (c) 2015 ubs121
         color: #999;
       }
 
-      .actions {
-        text-align: right;
-      }
-
-      .actions paper-icon-button {
+      paper-icon-button.cart {
         background: #709700;
         border-radius: 20px;
         color: #FFF;
+        bottom: 10px;
+        right: 10px;
+        position: absolute;
       }
   </style>
 
@@ -121,13 +116,10 @@ Copyright (c) 2015 ubs121
       <div class="flex">
       <template is="dom-repeat" items="[[items]]" >
         <paper-material class="item layout vertical" elevation="1">
-          <img src="{{item.img}}" style="height: 102px">
-          <a href="/p/{{item._id}}" class="paper-font-body1">{{item.name}}</a>
-          <div class="attr">{{item.price}}</div>
-          <div class="actions">
-            <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
-            <a on-click="_toCart"><paper-icon-button icon="add-shopping-cart" title="Сагсанд нэмэх"></paper-icon-button></a>
-          </div>
+          <img src="{{item.image}}" style="height: 102px">
+          <a href="/p/{{item.productID}}" class="paper-font-body1">{{item.name}}</a>
+          <div class="attr">{{item.price}}₮</div>            <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
+          <a on-click="_toCart"><paper-icon-button icon="add-shopping-cart" title="Сагсанд нэмэх" class="cart"></paper-icon-button></a>
         </paper-material>
       </template>
       </div>
@@ -265,108 +257,78 @@ Copyright (c) 2015 ubs121
       display: block;
     }
 
-    aside {
-      background: white;
-      display: block;
-      height: auto;
-      width: 200px;
+    table, table td, table th {
+      border-collapse: collapse;
+      font-size: 13px;
+      font-weight: normal;
     }
 
-    .item {
-        display: block;
-        float: left;
-        height: 140px;
-        width: 220px;
-        margin: 10px;
-        padding: 10px;
-        background: white;
-      }
+    table td, table th {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+    }
 
-      .item > .actions {
-        color: gray;
-      }
+    table th {
+      text-transform: uppercase;
+      color: #709700;
+    }
 
-      .categ {
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        font-size: 12px;
-        padding: 7px 20px;
-        color: #999;
-        margin-top: 5px;
-      }
-
-      .categ:hover, .categ.active {
-        border-color: #444;
-        color: #333;
-      }
-
-      .paper-font-body1 {
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 5px 0;
-      }
-
-      .item.p-catalog {
-        height: 200px;
-      }
-
-      .attr {
-        font-size: 11px;
-        color: #999;
-      }
-
-      .actions {
-        text-align: right;
-      }
-
-      .actions paper-icon-button {
-        background: #eee;
-        border-radius: 20px;
-      }
   </style>
 
   <template>
 
 
-    <div class="layout horizontal" style="margin-top: 15px;">
+    <div vertical layout style="margin: 15px 0 20px;">
 
        <!-- TODO: Эрэмбэлэх: үнээр, нийлүүлэгчээр -->
        <!-- TODO: Сагсанд бараа нэмэх -->
        <!-- TODO: Төлбөр хийх -->
 
       <!-- барааны жагсаалт-->
-      <div class="flex">
-        <table class="table table-striped">
-          <thead>
-              <tr>
-              <th>Зураг <span>{{ cartsCount }}</span></th>
-              <th>Нэр</th>
-              <th>Үнэ</th>
-              <th>Тоо ширхэг</th>
-              <th>Нийт</th>
-              </tr>
-          </thead>
-          <tbody>
-            <template is="dom-repeat" items="{{ cartItems }}" >
-              <tr>
-                <td><img src="{{item.image}}"></td>
-                <td>{{item.name}}</td>
-                <td>{{_toFixed( item.price, 2, 3)}}</td>
-                <td>{{item.quantity}}</td>
-                <td>{{_toFixed(item.total, 2, 3)}}</td>
-              </tr>
-            </template>
-          </tbody>
-          <tfoot>
+      <table class="table table-striped">
+        <thead>
             <tr>
-              <th colspan="4">Нийт</th>
-              <th>{{_toFixed( cartsTotal, 2, 3)}}</th>
+            <th>Зураг <span>{{ cartsCount }}</span></th>
+            <th>Нэр</th>
+            <th>Үнэ</th>
+            <th>Тоо ширхэг</th>
+            <th>Нийт</th>
             </tr>
-          </tfoot>
-        </table>
+        </thead>
+        <tbody>
+          <template is="dom-repeat" items="{{ cartItems }}" >
+            <tr>
+              <td><img src="{{item.image}}" style="height: 50px;"></td>
+              <td>{{item.name}}</td>
+              <td align="right">{{_toFixed( item.price, 2, 3)}}</td>
+              <td>{{item.quantity}}</td>
+              <td align="right">{{_toFixed(item.total, 2, 3)}}</td>
+            </tr>
+          </template>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="4">Нийт</th>
+            <th>
+              {{_toFixed( cartsTotal, 2, 3)}}
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+      <g-pay
+         merchant="100000000034033"
+         invoice=""
+         product=""
+         price={{ cartsTotal }}
+         currency="MNT"
+         user="suldee"
+         hash="{{ stamp }}"
+         callback="#"
+         size="medium"
+         style="margin-top: 20px;">
+      </g-pay>
 
-
-        <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+      <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAof4dyaB+RgOoxOh1u7uZ8NE8DWLPwB8Y1ReFP5IhKZQcYBlq
 87tqay4F0h9cDhhgZtkd1CaWlOox2gc0heGDVn10FrO8o+CBBO9z3v13sL5R4q8E
 CQ2Pp1wzSWopLAzzP6C+IToeGlp36N/Mve8myH4W+cFOtD8y3q1frbxsgoJ2WGUw
@@ -393,22 +355,6 @@ DfkmWAqjpwfv/wmwdaM68witC0uq93/eZNyDEPBNIlBXG+zAGyhNfx0kLEBPTtNp
 LNZDjNYeFYBtUp1GWcILLe4gwvswJ33mRIqqVa4kEjMMakLysHZ38/qPOWqQr1i5
 bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
 -----END RSA PRIVATE KEY-----</textarea>
-
-
-        <g-pay
-       merchant="100000000034033"
-       invoice="{{ cartInvoice }}"
-       product="{{ cartProduct }}"
-       price="{{ cartsTotal }}"
-       currency="MNT"
-       user="suldee"
-       hash="{{ cartStamp }}"
-       callback="#"
-       size="small">
-        </g-pay>
-
-      </div>
-
 
     </div>
 
