@@ -284,19 +284,21 @@ Copyright (c) 2015 ubs121
        <!-- TODO: Сагсанд бараа нэмэх -->
        <!-- TODO: Төлбөр хийх -->
 
+
+
       <!-- барааны жагсаалт-->
       <table class="table table-striped">
         <thead>
             <tr>
-            <th>Зураг <span>{{ cartsCount }}</span></th>
-            <th>Нэр</th>
-            <th>Үнэ</th>
-            <th>Тоо ширхэг</th>
-            <th>Нийт</th>
+              <th>Зураг <span>{{ cartsCount }}</span></th>
+              <th>Нэр</th>
+              <th>Үнэ</th>
+              <th>Тоо ширхэг</th>
+              <th>Нийт</th>
             </tr>
         </thead>
         <tbody>
-          <template is="dom-repeat" items="{{ cartItems }}" >
+          <template is="dom-repeat" id="cartList" items="{{ cartItems }}" >
             <tr>
               <td><img src="{{item.image}}" style="height: 50px;"></td>
               <td>{{item.name}}</td>
@@ -315,6 +317,7 @@ Copyright (c) 2015 ubs121
           </tr>
         </tfoot>
       </table>
+      <paper-button on-click="_ref">Flat button</paper-button>
       <g-pay
          merchant="100000000034033"
          invoice="{{ cartInvoice }}"
@@ -418,7 +421,7 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
 
           this.tags = [ ];
 
-          this.cartItems = app.carts;
+          this.cartItems = app.carts.slice(0, app.carts.length);
 
           /// this is total price for calculate
           this.cartsTotal = "0";
@@ -440,9 +443,9 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
           this.cartInvoice = random_num;
           /// end inoice number gene
 
-          console.log('Invoice :' + this.cartInvoice);
-          console.log('Product :' + this.cartProduct);
-          console.log('Price :' + this.cartsTotal);
+          //console.log('Invoice :' + this.cartInvoice);
+          //console.log('Product :' + this.cartProduct);
+          //console.log('Price :' + this.cartsTotal);
 
           var rsa = new RSAKey();
           rsa.readPrivateKeyFromPEMString(this.$.privkey.value);
@@ -451,7 +454,13 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
 
           this.cartStamp = linebrk(hSig, 64);
 
-        },
+      },
+
+      _ref: function() {
+        console.log(app.carts);
+        this.cartItems = app.carts.slice(0, app.carts.length);
+        console.log(this.cartItems);
+      }
 
         
       });
