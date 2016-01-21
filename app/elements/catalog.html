@@ -118,7 +118,7 @@ Copyright (c) 2015 ubs121
         <paper-material class="item layout vertical" elevation="1">
           <img src="{{item.image}}" style="height: 102px">
           <a href="/p/{{item.productID}}" class="paper-font-body1">{{item.name}}</a>
-          <div class="attr">{{item.price}}₮</div>            <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
+          <div class="attr">{{_toFixed(item.price)}}₮</div>            <!-- <paper-icon-button icon="refresh"></paper-icon-button> -->
           <a on-click="_toCart"><paper-icon-button icon="add-shopping-cart" title="Сагсанд нэмэх" class="cart"></paper-icon-button></a>
         </paper-material>
       </template>
@@ -214,6 +214,13 @@ Copyright (c) 2015 ubs121
         handleTags: function(resp) {
           if (!resp.detail.response.Error) {
             this.tags = resp.detail.response.Result.Data;
+          }
+        },
+
+        _toFixed: function( value, n, x) {
+          if (value) {
+            var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+            return parseFloat(value).toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
           }
         },
 
