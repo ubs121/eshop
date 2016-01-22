@@ -253,7 +253,10 @@ Copyright (c) 2015 ubs121
             console.log('is inserted product.');
 
           } else {
-
+            this.items[id]['quantity'] = 1;
+            this.items[id]['total'] = 1 * this.items[id]['price'];
+            app.cartsTotal += 1 * this.items[id]['price'];
+            
             app.carts.push(this.items[id]);
             app.carts = app.carts.slice();
             app.carts_count = app.carts.length;

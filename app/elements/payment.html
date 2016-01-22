@@ -63,7 +63,8 @@
               <td><img src="{{item.image}}" style="height: 50px;"></td>
               <td>{{item.name}}</td>
               <td align="right">{{_toFixed( item.price, 2, 3)}}</td>
-              <td>{{item.quantity}}</td>
+              <td>
+                <paper-input error-message="Invalid input!" id="inputForValidation" type="number" no-label-float value="{{item.quantity}}" min="{{item.quantity}}" max="{{item.quantityonhand}}"></paper-input></td>
               <td align="right">{{_toFixed(item.total, 2, 3)}}</td>
             </tr>
           </template>
@@ -88,7 +89,8 @@
          hash="{{ cartStamp }}"
          callback="#"
          size="medium"
-         style="margin-top: 20px;">
+         style="margin-top: 20px;"
+         on-click="_ref">
       </g-pay>
 
       <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
@@ -181,18 +183,6 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
 
           this.tags = [ ];
 
-          /// this is total price for calculate
-          this.cartsTotal = "0";
-          this.cartProduct = "";
-          for (var i=0; i<this.cartItems.length; i++) {
-            if(!this.cartItems[i]['quantity']) { this.cartItems[i]['quantity'] = 1; }
-            this.cartItems[i]['total'] = parseFloat(this.cartItems[i]['quantity']) * parseFloat(this.cartItems[i]['price']);
-
-            this.cartsTotal = parseFloat(this.cartsTotal) + parseFloat(this.cartItems[i]['total']);
-            this.cartProduct += this.cartItems[i]['name']+' ^'+this.cartItems[i]['quantity'] +' ';
-          }
-          /// end total price
-
           /// start inoice number gene
           var d = new Date();
           function f(n) { return n < 10 ? '0' + n : n; }  
@@ -215,9 +205,16 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
       },
 
       _ref: function() {
-        console.log(app.carts);
-        this.cartItems = app.carts.slice(0, app.carts.length);
-        console.log(this.cartItems);
+        var result = true;
+        document.getElementById('inputForValidation').validate();
+        for (var i = document.getElementById('inputForValidation').length - 1; i >= 0; i--) {
+          if(!document.getElementById('inputForValidation').validate())
+          {
+            result = document.getElementById('inputForValidation').validate();
+          }
+        };
+
+        return result;
       }
 
         
