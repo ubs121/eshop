@@ -1,0 +1,228 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+
+<link rel="import" href="gpay-btn/gpay-btn.html">
+
+<script src="../bower_components/d3/d3.min.js"></script>
+<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/sha256.js"></script>
+<script src="../bin/jsencrypt.js"></script>
+
+
+<dom-module id="cart-catalog">
+  <style>
+    :host {
+      display: block;
+    }
+
+    table, table td, table th {
+      border-collapse: collapse;
+      font-size: 13px;
+      font-weight: normal;
+    }
+
+    table td, table th {
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+    }
+
+    table th {
+      text-transform: uppercase;
+      color: #709700;
+    }
+
+  </style>
+
+  <template>
+
+
+    <div vertical layout style="margin: 15px 0 20px;">
+
+       <!-- TODO: Эрэмбэлэх: үнээр, нийлүүлэгчээр -->
+       <!-- TODO: Сагсанд бараа нэмэх -->
+       <!-- TODO: Төлбөр хийх -->
+
+
+
+      <!-- барааны жагсаалт-->
+      <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>Зураг <span>{{ cartsCount }}</span></th>
+              <th>Нэр</th>
+              <th>Үнэ</th>
+              <th>Тоо ширхэг</th>
+              <th>Нийт</th>
+            </tr>
+        </thead>
+        <tbody>
+          <template is="dom-repeat" id="cartList" items="{{ cartItems }}" >
+            <tr>
+              <td><img src="{{item.image}}" style="height: 50px;"></td>
+              <td>{{item.name}}</td>
+              <td align="right">{{_toFixed( item.price, 2, 3)}}</td>
+              <td>{{item.quantity}}</td>
+              <td align="right">{{_toFixed(item.total, 2, 3)}}</td>
+            </tr>
+          </template>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="4">Нийт</th>
+            <th>
+              {{_toFixed( cartsTotal, 2, 3)}}
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+      <paper-button on-click="_ref">Flat button</paper-button>
+      <g-pay
+         merchant="100000000034033"
+         invoice="{{ cartInvoice }}"
+         product="{{ cartProduct }}"
+         price={{ cartsTotal }}
+         currency="MNT"
+         user="suldee"
+         hash="{{ cartStamp }}"
+         callback="#"
+         size="medium"
+         style="margin-top: 20px;">
+      </g-pay>
+
+      <textarea id="privkey" rows="15" cols="65">-----BEGIN RSA PRIVATE KEY-----
+MIIEowIBAAKCAQEAof4dyaB+RgOoxOh1u7uZ8NE8DWLPwB8Y1ReFP5IhKZQcYBlq
+87tqay4F0h9cDhhgZtkd1CaWlOox2gc0heGDVn10FrO8o+CBBO9z3v13sL5R4q8E
+CQ2Pp1wzSWopLAzzP6C+IToeGlp36N/Mve8myH4W+cFOtD8y3q1frbxsgoJ2WGUw
+BXezUcrvwqQef+Z/VXk1iNB/CTOiia/3QZDjKx+o8RHdP7Yd/hMUKChGyWFSDGaV
+rfqTESNO3hnpJoE9ALbRlD93xEO8KbWd6HL49MvptvPMkSLhy8R1o4SJ1TmlP69C
+rXD5NsGlhF5tZ6W9DE/+T/VKEF5mLKPCS1Go9QIDAQABAoIBABeGvnC//FbSxToD
+wMWJE2xkFuKizSVL3uFjzxhScrqFJjHWvy+yslvqjTHdGBN7+tQ1CB39lLT/5kmR
+7lDbVaXEBo4dgHIUcuhyllN2YGGs4luXq3BdJdXakCBDaMNbBiDhiXtt411UckHB
+7wxOpUVM+q0/I90NqKeqalDjIqc5bCQtaGoxuEp4oxjOgIhJj5soVc/ndMzk/h4h
+1a1Y9fTXHFbxhJF0fajUcN/Z/+ftk8DF73VFcRrQsFkZPYbS6laONMPrF+uKI36+
+l0czg93h83vHeCL1G7dTlTLjqRJU4x54SKngx7Uu6rYB+mP1vzP5xrOfV0GvlodI
+93r3oikCgYEAxTwAYnZ+MZ0fL7Im115LWKPBJUQVHVq+3++7k6a1b5VyKmcpjeWU
+ruBqmSrSlTSeHl4BN2zkQFXFLovzcRUjshpFh4kk9h7hwtu3G5I//UBsW+1s4eEY
+DslB2lDopzbp6W4+rvykT8vUWQSlKBnvTdKlCRRImRBWn+3QbUx6xBcCgYEA0kIP
+lEekSSoTXehRIblaYzEaGg1mGdvPGthbB+kAQ7bkmaYZRknpFT8Pji+NwJdbxFIY
+i7sC5NOGtWLx18N2Jf/Dqg9pJ+cP6XdAPktdjvOjdRqDbCfOLn/ritlxxDnGF7aq
+wBC6HUnT25Acq0vhRqxGIcorrC9YZ3Bh3MUyhtMCgYEAw9W/zAQ7aKfJv2H0jwNh
+bLGrpYTkMjFYNKGkbgapQBHzOYcVC39ZEgphzZNnZB7KoPxV2OKWAAsprf3nyfBj
+cQQE5X6W5InlP8VJGmcsghjlfqFP6zfE22mZqVuMpfswZkbAlp7jxxdr0Ld8BUU7
+BtqQY2Nwcgp2+HT47o1xmCECgYASmsPUJA62ZqG2EoNzT3pfAo5DteHN8fQ+dNyB
+M63RUBKkQd1Eqe+U8LKIq06ItxvooDcJzi9wXgMyc6HgrKv8qsf+eUSdwkVXLDUk
+DfkmWAqjpwfv/wmwdaM68witC0uq93/eZNyDEPBNIlBXG+zAGyhNfx0kLEBPTtNp
+/Iz+/wKBgBQSAGFWHh92+VZroobC0jHiHyso3AVCQvh7vaPKqEy05AFVzdfGBAI9
+LNZDjNYeFYBtUp1GWcILLe4gwvswJ33mRIqqVa4kEjMMakLysHZ38/qPOWqQr1i5
+bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
+-----END RSA PRIVATE KEY-----</textarea>
+
+    </div>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'cart-catalog',
+        properties: {
+          cartItems: {
+            type: Array,
+            notify: true,
+          },
+          letters: ['a', 'b', 'c'],
+          cartsCount: {
+            type: String,
+          },
+          cartsTotal: {
+            type: String,
+          },
+          cartInvoice: {
+            type: String,
+          },
+          cartProduct: {
+            type: String,
+          },
+          cartStamp: {
+            type: String,
+          },
+          tags: {
+              type: Array
+          }
+        },
+        publish: {
+          // won't reflect to an attribute
+          bigText: '',
+          // will reflect to an attribute
+          active: {value: false, reflect: true}
+        },
+        _toFixed: function( value, n, x) {
+          if (value) {
+            var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+            return parseFloat(value).toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+          }
+        },
+        ready: function() {
+        // TODO: каталогит icon нэмэх. http://www.flaticon.com/packs/shopping
+          this.menu = [
+            {name: 'хувцас', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
+            {name: 'гоёл', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
+            {name: 'гэр ахуй', 'count': 12, 'color': '#E7560D'},
+            {name: 'хүнс', 'count': 12, 'color': '#E7560D'},
+            {name: 'компютер', 'color': '#FDAE6B', '_tags': []},
+            {name: 'бичиг хэрэг', 'count': '3', 'color':'pink', 'rank': 4.5},
+            {name: 'спорт', 'count': '5', 'rank': 4.5, 'color': '#FDAE6B'},
+            {name: 'авто', 'count': '5', 'rank': 4.5, 'color': '#FDAE6B'}
+          ];
+
+          this.tags = [ ];
+
+          /// this is total price for calculate
+          this.cartsTotal = "0";
+          this.cartProduct = "";
+          for (var i=0; i<this.cartItems.length; i++) {
+            if(!this.cartItems[i]['quantity']) { this.cartItems[i]['quantity'] = 1; }
+            this.cartItems[i]['total'] = parseFloat(this.cartItems[i]['quantity']) * parseFloat(this.cartItems[i]['price']);
+
+            this.cartsTotal = parseFloat(this.cartsTotal) + parseFloat(this.cartItems[i]['total']);
+            this.cartProduct += this.cartItems[i]['name']+' ^'+this.cartItems[i]['quantity'] +' ';
+          }
+          /// end total price
+
+          /// start inoice number gene
+          var d = new Date();
+          function f(n) { return n < 10 ? '0' + n : n; }  
+          var random_num = Math.floor(Math.random() * (9999 -  1000)) + 1000;
+          random_num = d.getFullYear() + f(d.getMonth()+1) + f(d.getDate()) + random_num;
+          this.cartInvoice = random_num;
+          /// end inoice number gene
+
+          //console.log('Invoice :' + this.cartInvoice);
+          //console.log('Product :' + this.cartProduct);
+          //console.log('Price :' + this.cartsTotal);
+
+          var rsa = new RSAKey();
+          rsa.readPrivateKeyFromPEMString(this.$.privkey.value);
+          var hashAlg = 'sha256';
+          var hSig = rsa.signString(this.cartProduct +''+ this.cartsTotal +'MNT', hashAlg);
+
+          this.cartStamp = linebrk(hSig, 64);
+
+      },
+
+      _ref: function() {
+        console.log(app.carts);
+        this.cartItems = app.carts.slice(0, app.carts.length);
+        console.log(this.cartItems);
+      }
+
+        
+      });
+    })();
+  </script>
+
+</dom-module>

@@ -80,9 +80,9 @@ Copyright (c) 2015 ubs121
   };
 
   // this is cart list.
-  app.carts = [{"productID":"p00003","name":"Ном \"Мөнх Тэнгэрийн Монгол Дор\"","price":"51750","quantityonhand":"9","categoryID":"books","image":"data/none.jpg"},{"productID":"p00009","name":"Discover Mongolia /танилцуулга CD/","price":"14145","quantityonhand":"4","categoryID":"CD_DVD","image":"data/none.jpg"},{"productID":"p00010","name":"Гончигсумлаа CD","price":"11500","quantityonhand":"1","categoryID":"CD_DVD","image":"data/none.jpg"}];
+  app.carts = [];
   // This is count number of cart items.
-  app.carts_count = 3;
+  app.carts_count = 0;
   // This is product details info.
   app.detail = {};
 
