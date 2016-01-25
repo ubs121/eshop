@@ -44,13 +44,15 @@ Copyright (c) 2015 ubs121
               <li><a href="javascript:void(0)" class="color4"></a></li>
           </ul>
       </div>
+      <template is="dom-repeat" items="[[detailsItem]]" >
       <div class="product">
           <img src="../images/golomt_icon.jpg" style="margin-bottom: 20px;">
-          <div class="product-name">Зөөврийн хард</div>
-          <div class="product-price">146,107.50₮</div>
-          <a href="" class="button basketAdd">Сагсанд нэмэх</a>
+          <div class="product-name">{{ item.name }}</div>
+          <div class="product-price">{{ _toFixed(item.price) }}₮</div>
+          <a on-click="_toCart" class="button basketAdd">Сагсанд нэмэх</a>
           <a href="" class="button waitlist">хүсэлийн жагсаалт</a>
       </div>
+      </template>
       <div style="width: 50%; padding-left: 40px;">
           <paper-tabs selected="{{selected}}">
             <paper-tab>Үзүүлэлт</paper-tab>
@@ -159,7 +161,44 @@ Copyright (c) 2015 ubs121
 
         ready: function() {
           this.selected = 0;
-          console.log(app.detail);
+        },
+
+        _toFixed: function( value, n, x) {
+          if (value) {
+            var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
+            return parseFloat(value).toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
+          }
+        },
+
+        _toCart: function(e) {
+          var id = e.model.index;
+          var isRecorded = false;
+          console.log(id);
+          var newId = app.detail[id]['_id'];
+          app.carts.forEach(function(entry) {
+
+            if (newId == entry['_id'])
+            {
+              isRecorded = true;
+            }
+          });
+
+          if (isRecorded) {
+
+            console.log('is inserted product.');
+
+          } else {
+            app.detail[id]['quantity'] = 1;
+            app.detail[id]['total'] = 1 * app.detail[id]['price'];
+            app.cartsTotal += 1 * app.detail[id]['price'];
+            
+            app.carts.push(app.detail[id]);
+            app.carts = app.carts.slice();
+            app.carts_count = app.carts.length;
+
+            console.log('Someone put a product to cart has been successful.');
+
+          };
         }
       });
     })();

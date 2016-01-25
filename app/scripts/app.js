@@ -85,6 +85,6 @@ Copyright (c) 2015 ubs121
   app.carts_count = 0;
   app.cartsTotal = 0.0;
   // This is product details info.
-  app.detail = {};
+  app.detail = [];
 
 })(document);

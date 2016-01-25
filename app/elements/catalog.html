@@ -231,7 +231,9 @@ Copyright (c) 2015 ubs121
 
             if (newId == entry['_id'])
             {
-              app.detail = entry;
+              app.detail = [];
+              app.detail.push(entry);
+              app.detail = app.detail.slice();
             }
           });
         },

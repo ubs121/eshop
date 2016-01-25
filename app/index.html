@@ -105,9 +105,9 @@ Copyright (c) 2015 ubs121
 
       <section data-route="p-info">
         <paper-material elevation="1">
-          <h2 class="page-title">Product info:<span>{{params.id}}</span></h2>
+          <h2 class="page-title">Product info:<span>{{params.id}}{{ detail.name }}</span></h2>
           <!-- <div>This is <span>{{params.id}}</span>'s section</div> -->
-          <p-info details-item="app.detail"></p-info>
+          <p-info details-item="{{ detail }}"></p-info>
         </paper-material>
       </section>
 
