@@ -191,10 +191,6 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
           this.cartInvoice = random_num;
           /// end inoice number gene
 
-          //console.log('Invoice :' + this.cartInvoice);
-          //console.log('Product :' + this.cartProduct);
-          //console.log('Price :' + this.cartsTotal);
-
           var rsa = new RSAKey();
           rsa.readPrivateKeyFromPEMString(this.$.privkey.value);
           var hashAlg = 'sha256';
@@ -206,8 +202,10 @@ bIlHqIvMiPaF5hRIik/IZR+b4khoCObo9id2u9mikGT/LRPAI3H9
 
       _ref: function() {
         var result = true;
-        document.getElementById('inputForValidation').validate();
+        console.log(document.getElementById('inputForValidation').length);
+        //document.getElementById('inputForValidation').validate();
         for (var i = document.getElementById('inputForValidation').length - 1; i >= 0; i--) {
+          console.log(i);
           if(!document.getElementById('inputForValidation').validate())
           {
             result = document.getElementById('inputForValidation').validate();
