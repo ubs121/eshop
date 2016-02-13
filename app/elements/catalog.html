@@ -46,15 +46,15 @@ Copyright (c) 2015 ubs121
 
       .categ:hover, .categ.active {
         border-color: #709700;
-        color: #709700;
+        color: #709700 !important;
       }
 
       .paper-font-body1 {
         text-transform: uppercase;
-        padding: 5px 0;
+        padding: 10px 0;
         color: #444;
         text-decoration: none;
-        line-height: 16px;
+        line-height: 14px;
       }
 
       .paper-font-body1:hover {
@@ -96,7 +96,7 @@ Copyright (c) 2015 ubs121
      <!-- TODO: https://www.apm.mn/ зүүн талын toolbar харах -->
      <template is="dom-repeat" items="[[menu]]">
        <paper-button class="categ" href="#" on-tap="filter"
-            style="background:[[item.color]]">
+            style="color:[[item.color]]">
         [[item.name]]
        </paper-button>
      </template>
@@ -161,7 +161,7 @@ Copyright (c) 2015 ubs121
           this.menu = [
             {name: 'Хувцас', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
             {name: 'Гоёл', 'count': '11', 'color':'#3182BD',  'rank': 4.5},
-            {name: 'Гэр Йхуй', 'count': 12, 'color': '#E7560D'},
+            {name: 'Гэр Ахуй', 'count': 12, 'color': '#E7560D'},
             {name: 'Хүнс', 'count': 12, 'color': '#E7560D'},
             {name: 'Электрон Бараа', 'color': '#FDAE6B', '_tags': []},
             {name: 'Бичиг Хэрэг', 'count': '3', 'color':'pink', 'rank': 4.5},
